@@ -66,6 +66,22 @@
 	},
 
 	{
+		"meal": "mac n cheese with dill breadcrumbs",
+		"ingredients": [
+			"lactose free cheese",
+			"whole grain mustard",
+			"pasta",
+			"milk",
+			"lactose free butter",
+			"breadcrumbs",
+			"tomatoes",
+			"fresh dill"
+		],
+		"category": "pasta",
+		"prep": ["cheese sauce"]
+	},
+
+	{
 		"meal": "maple garlic tofu and rice",
 		"ingredients": [
 			"high protein tofu",
@@ -118,6 +134,21 @@
 				"pickled cabbage",
 				"rice"]
 	},
+
+	{
+		"meal": "veggie pancakes with fake chicken",
+		"ingredients": [
+			"prepared cabbage slaw",
+			"flour",
+			"eggs",
+			"cornstarch",
+			"fake chicken tenders"
+		],
+		"category": "pancakes",
+		"prep": ["pancake batter"]
+	},
+
+
 
 
 ]

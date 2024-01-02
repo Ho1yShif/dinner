@@ -1,5 +1,15 @@
 [
 	{
+		"meal": "goodles",
+		"ingredients": [
+			"vegan goodles",
+			"pasta"
+		],
+		"category": "pasta",
+		"prep": []
+	},
+
+	{
 		"meal": "pasta bolognese",
 		"ingredients": [
 			"pasta",

@@ -1,3 +1,26 @@
-{
+[
+	{
+		"meal": "pasta bolognese",
+		"ingredients": [
+			"pasta",
+			"garlic",
+			"vegan bolognese sauce"
+		],
+		"prep": []
+	},
 
-}
+	{
+		"meal": "maple garlic chicken pasta",
+		"ingredients": [
+			"pasta",
+			"maple syrup",
+			"soy sauce",
+			"cornstarch",
+			"garlic",
+			"fake chicken",
+			"vegan bolognese sauce"
+		],
+		"prep": []
+	},
+
+]

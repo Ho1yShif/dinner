@@ -6,6 +6,7 @@
 			"garlic",
 			"vegan bolognese sauce"
 		],
+		"category": "pasta",
 		"prep": []
 	},
 
@@ -17,9 +18,73 @@
 			"soy sauce",
 			"cornstarch",
 			"garlic",
-			"fake chicken",
-			"vegan bolognese sauce"
+			"ginger",
+			"apple cider vinegar",
+			"fake chicken tenders"
 		],
+		"category": "pasta",
+		"prep": []
+	},
+
+	{
+		"meal": "miso pasta",
+		"ingredients": [
+			"pasta",
+			"garlic",
+			"ginger",
+			"apple cider vinegar",
+			"white miso paste"
+		],
+		"category": "pasta",
+		"prep": []
+	},
+
+	{
+		"meal": "chili garlic noodles",
+		"ingredients": [
+			"pasta",
+			"garlic",
+			"dark soy sauce",
+			"soy sauce",
+			"edamame",
+			"black vinegar"
+		],
+		"category": "pasta",
+		"prep": []
+	},
+
+	{
+		"meal": "maple garlic tofu and rice",
+		"ingredients": [
+			"tofu",
+			"maple syrup",
+			"soy sauce",
+			"cornstarch",
+			"garlic",
+			"ginger",
+			"apple cider vinegar",
+			"fake chicken tenders",
+			"rice"
+		],
+		"category": "tofu",
+		"prep": []
+	},
+
+	{
+		"meal": "gochujang tofu and rice",
+		"ingredients": [
+			"tofu",
+			"maple syrup",
+			"soy sauce",
+			"gochujang",
+			"cornstarch",
+			"garlic",
+			"ginger",
+			"apple cider vinegar",
+			"fake chicken tenders",
+			"rice"
+		],
+		"category": "tofu",
 		"prep": []
 	},
 

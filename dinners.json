@@ -23,7 +23,7 @@
 			"fake chicken tenders"
 		],
 		"category": "pasta",
-		"prep": []
+		"prep": ["maple garlic sauce"]
 	},
 
 	{
@@ -36,7 +36,7 @@
 			"white miso paste"
 		],
 		"category": "pasta",
-		"prep": []
+		"prep": ["miso sauce"]
 	},
 
 	{
@@ -47,10 +47,11 @@
 			"dark soy sauce",
 			"soy sauce",
 			"edamame",
+			"red pepper flakes",
 			"black vinegar"
 		],
 		"category": "pasta",
-		"prep": []
+		"prep": ["chili garlic sauce"]
 	},
 
 	{
@@ -67,7 +68,7 @@
 			"rice"
 		],
 		"category": "tofu",
-		"prep": []
+		"prep": ["maple garlic sauce", "rice"]
 	},
 
 	{
@@ -85,7 +86,26 @@
 			"rice"
 		],
 		"category": "tofu",
-		"prep": []
-	}
+		"prep": ["gochujang sauce", "rice"]
+	},
+
+	{
+		"meal": "orange steak tacos",
+		"ingredients": [
+			"beyond steak",
+			"tortillas",
+			"chipotle peppers in adobo",
+			"orange",
+			"garlic",
+			"ginger",
+			"cabbage",
+			"rice"
+		],
+		"category": "tacos",
+		"prep": ["chipotle sauce",
+				"pickled cabbage",
+				"rice"]
+	},
+
 
 ]

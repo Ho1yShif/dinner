@@ -144,11 +144,51 @@
 			"cornstarch",
 			"fake chicken tenders"
 		],
-		"category": "pancakes",
+		"category": "pancake",
 		"prep": ["pancake batter"]
 	},
 
+	{
+		"meal": "tomato gnocchi soup with sourdough",
+		"ingredients": [
+			"tomato puree",
+			"tomato paste",
+			"onion",
+			"garlic",
+			"frozen mixed vegetables",
+			"gnocchi",
+			"lemon",
+			"sourdough bread"
+		],
+		"category": "soup",
+		"prep": ["soup base"]
+	},
 
+	{
+		"meal": "chicken with smashed potatoes",
+		"ingredients": [
+			"fake chicken tenders",
+			"small potatoes",
+			"olive oil",
+			"dill",
+			"nondairy yogurt",
+			"lemon"
+		],
+		"category": "potatoes",
+		"prep": ["boiled potatoes"]
+	},
+
+	{
+		"meal": "baked potatoes",
+		"ingredients": [
+			"large russet potatoes",
+			"olive oil",
+			"nondairy yogurt",
+			"lactose free cheese"
+		],
+		"category": "potatoes",
+		"prep": ["boiled potatoes"]
+	},
 
 
 ]

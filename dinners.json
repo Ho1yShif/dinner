@@ -229,16 +229,60 @@
 	},
 
 	{
-		"meal": "curry with naan",
+		"meal": "curry with rice",
 		"ingredients": [
-			"lentils",
+			"garlic",
+			"ginger",
+			"jalapenos",
+			"red lentils",
 			"curry powder",
 			"garam masala",
 			"coconut milk",
+			"cumin",
+			"coriander",
+			"tumeric",
+			"vegetable broth",
+			"lemon",
+			"canned crushed tomatoes",
+			"rice"
 		],
-		"category": "pizza",
-		"prep": ["sauteed mushrooms"]
+		"category": "soup",
+		"prep": ["curry aromatics", "measure spices", "rice"]
 	},
 
+	{
+		"meal": "garlic yogurt pasta",
+		"ingredients": [
+			"nondairy yogurt",
+			"garlic",
+			"pasta"
+		],
+		"category": "pasta",
+		"prep": ["garlic"]
+	},
 
+	{
+		"meal": "pesto pasta",
+		"ingredients": [
+			"vegan pesto",
+			"garlic",
+			"pasta"
+		],
+		"category": "pasta",
+		"prep": ["garlic"]
+	},
+
+	{
+		"meal": "sheet pan gnocchi",
+		"ingredients": [
+			"vegan pesto",
+			"nondairy yogurt",
+			"lemon",
+			"gnocchi",
+			"onion",
+			"rosemary"
+		],
+		"category": "potatoes",
+		"prep": ["onion", "dressing"]
+	}
 ]

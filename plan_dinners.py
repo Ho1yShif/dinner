@@ -1,3 +1,3 @@
 staples = ["garlic", "olive oil", "neutral oil",
 		   "salt", "pepper", "vegan butter",
-		   "eggs"]
+		   "eggs", "mayonnaise"]

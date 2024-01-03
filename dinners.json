@@ -160,7 +160,6 @@
 		"ingredients": [
 			"fake chicken tenders",
 			"small potatoes",
-			"olive oil",
 			"dill",
 			"nondairy yogurt",
 			"lemon"
@@ -173,12 +172,72 @@
 		"meal": "baked potatoes",
 		"ingredients": [
 			"large russet potatoes",
-			"olive oil",
-			"nondairy yogurt",
-			"lactose free cheese"
+			"lactose free cheese",
+			"beyond beef",
+			"green onions"
 		],
 		"category": "potatoes",
 		"prep": ["boiled potatoes"]
+	},
+
+	{
+		"meal": "burgers with caramelized onions",
+		"ingredients": [
+			"beyond burgers",
+			"lactose free cheese",
+			"burger buns",
+			"whole grain mustard",
+			"lettuce",
+			"onions"
+		],
+		"category": "burgers",
+		"prep": []
+	},
+
+	{
+		"meal": "grilled cheese with tomato soup",
+		"ingredients": [
+			"ready-made tomato soup",
+			"sourdough bread",
+			"lactose free cheese",
+			"tomatoes"
+		],
+		"category": "soup",
+		"prep": []
+	},
+
+	{
+		"meal": "frozen pizza with salad",
+		"ingredients": [
+			"daiya frozen pizza",
+			"salad kit"
+		],
+		"category": "pizza",
+		"prep": []
+	},
+
+	{
+		"meal": "pita pizza",
+		"ingredients": [
+			"soft pitas",
+			"tomato sauce",
+			"lactose free cheese",
+			"mushrooms"
+		],
+		"category": "pizza",
+		"prep": ["sauteed mushrooms"]
+	},
+
+	{
+		"meal": "curry with naan",
+		"ingredients": [
+			"lentils",
+			"curry powder",
+			"garam masala",
+			"coconut milk",
+		],
+		"category": "pizza",
+		"prep": ["sauteed mushrooms"]
 	},
 
 

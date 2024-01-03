@@ -13,7 +13,6 @@
 		"meal": "pasta bolognese",
 		"ingredients": [
 			"pasta",
-			"garlic",
 			"vegan bolognese sauce"
 		],
 		"category": "pasta",
@@ -27,7 +26,6 @@
 			"maple syrup",
 			"soy sauce",
 			"cornstarch",
-			"garlic",
 			"ginger",
 			"apple cider vinegar",
 			"fake chicken tenders"
@@ -40,7 +38,6 @@
 		"meal": "miso pasta",
 		"ingredients": [
 			"pasta",
-			"garlic",
 			"ginger",
 			"cornstarch",
 			"apple cider vinegar",
@@ -54,7 +51,6 @@
 		"meal": "chili garlic noodles",
 		"ingredients": [
 			"thick noodles",
-			"garlic",
 			"dark soy sauce",
 			"soy sauce",
 			"edamame",
@@ -88,7 +84,6 @@
 			"maple syrup",
 			"soy sauce",
 			"cornstarch",
-			"garlic",
 			"ginger",
 			"apple cider vinegar",
 			"fake chicken tenders",
@@ -106,7 +101,6 @@
 			"soy sauce",
 			"gochujang",
 			"cornstarch",
-			"garlic",
 			"ginger",
 			"apple cider vinegar",
 			"fake chicken tenders",
@@ -124,7 +118,6 @@
 			"chipotle peppers in adobo",
 			"orange",
 			"cornstarch",
-			"garlic",
 			"ginger",
 			"cabbage",
 			"rice"
@@ -140,7 +133,6 @@
 		"ingredients": [
 			"prepared cabbage slaw",
 			"flour",
-			"eggs",
 			"cornstarch",
 			"fake chicken tenders"
 		],
@@ -154,7 +146,6 @@
 			"tomato puree",
 			"tomato paste",
 			"onion",
-			"garlic",
 			"frozen mixed vegetables",
 			"gnocchi",
 			"lemon",

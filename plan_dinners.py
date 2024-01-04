@@ -1,4 +1,3 @@
-import json
 import random
 import pandas as pd
 from datetime import date
@@ -14,8 +13,8 @@ class PlanDinners:
 		self.today = str(date.today()).replace("-", "_")
 
 		"""Read dinners from JSON"""
-		self.dinners = json.load(open("dinners.json", "r"))
-		self.dinners = dict(self.dinners)
+		with open("dinners.json", "r") as file:
+			self.dinners = json.load(file)
 
 		"""Set staple lists"""
 		self.staples = ["garlic", "olive oil", "neutral oil",

@@ -31,7 +31,7 @@ class PlanDinners:
 		self.staples.sort()
 
 		self.fresh_veg = ["spinach", "carrots", "asparagus",
-					"orange peppers", "yellow peppers", "cabbage",
+					"orange/yellow peppers", "cabbage",
 					"zucchini", "squash", "cucumber",
 					"snap peas", "brussels sprouts"]
 
@@ -40,6 +40,8 @@ class PlanDinners:
 		self.toppings = ["hemp seeds", "pumpkin seeds", "avocado", "cottage cheese"]
 
 	def schedule_meals(self):
+		"""Build meal schedule for the week along with ingredients and ahead-of-time prep instructions"""
+
 		meal_options = list(self.dinners.keys())
 		chosen_meals, meal_categories = [], []
 
@@ -74,6 +76,8 @@ class PlanDinners:
 		return self.meals_df
 
 	def shopping(self):
+		"""Build shopping list for the week based on staples, vegetables, toppings, and the meal plan"""
+
 		"""Create list from randomly chosen vegetable and topping items"""
 		fresh_veg_items = random.sample(self.fresh_veg, 2)
 		frozen_veg_item = random.sample(self.frozen_veg, 1)
@@ -101,17 +105,18 @@ class PlanDinners:
 		return self.shopping_df
 
 	def export(self):
+		"""Schedule meals, create shopping list, and export them to an Excel workbook with two separate sheets"""
+
 		PlanDinners.schedule_meals(self)
 		PlanDinners.shopping(self)
-		"""Export meal schedule and shopping list to one Excel workbook with two separate sheets"""
+
 		excel_path = f"~/Desktop/dinners_{self.today}.xlsx"
 		with pd.ExcelWriter(excel_path) as writer:
 			self.meals_df.to_excel(writer, sheet_name="Meals", index=False)
 			self.shopping_df.to_excel(writer, sheet_name="Shopping", index=False)
+
 		print(f"Exported meal plan to {excel_path}")
 
 if __name__ == "__main__":
 	dinners = PlanDinners()
-	# schedule = dinners.schedule_meals()
-	# shop = dinners.shopping()
 	dinners.export()

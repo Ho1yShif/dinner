@@ -107,7 +107,7 @@ class PlanDinners:
 		return self.shopping_df
 
 	def export(self):
-		"""Export meal schedule and shopping list to one Excel workbook with 2 tabs"""
+		"""Export meal schedule and shopping list to one Excel workbook with two separate sheets"""
 		excel_path = f"~/Desktop/dinner_plans_{self.today}.xlsx"
 		with pd.ExcelWriter(excel_path) as writer:
 			self.meals_df.to_excel(writer, sheet_name="Meals", index=False)

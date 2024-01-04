@@ -1,3 +1,10 @@
+"""
+TODO
+Unique categories weekly
+Display
+UI
+"""
+
 import json
 import random
 import pandas as pd
@@ -39,7 +46,7 @@ class PlanDinners:
 		chosen_meals = []
 
 		"""Randomly select 3 meals and display menu"""
-		random_meals = random.choices(sequence=meal_options, k=remaining_meals)
+		random_meals = random.choices(population=meal_options, k=remaining_meals)
 		chosen_meals.extend(random_meals)
 		random.shuffle(chosen_meals)
 

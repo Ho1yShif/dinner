@@ -27,7 +27,7 @@ class PlanDinners:
 		self.staples = ["garlic", "olive oil", "neutral oil",
 				"salt", "pepper", "vegan butter",
 				"eggs", "mayonnaise", "vegetable broth",
-				"vegan parmesan", "vegan cheese", "chia seeds"]
+				"vegan parmesan", "vegan sliced cheese", "chia seeds"]
 		self.staples.sort()
 
 		self.fresh_veg = ["spinach", "carrots", "asparagus",

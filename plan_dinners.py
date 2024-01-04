@@ -22,8 +22,8 @@ class PlanDinners:
         """Read data from JSON"""
         with open("dinners.json", "r") as file:
             dinners_dict = json.load(file)
-            self.recipes = {
-                recipe["name"]: recipe for recipe in dinners_dict["recipes"]}
+            self.meals = {
+                meal["name"]: meal for meal in dinners_dict["meals"]}
             self.staples = dinners_dict["shared_ingredients"]["staples"]
             self.fresh_veg = dinners_dict["shared_ingredients"]["fresh_vegetables"]
             self.frozen_veg = dinners_dict["shared_ingredients"]["frozen_vegetables"]
@@ -32,13 +32,13 @@ class PlanDinners:
     def schedule_meals(self):
         """Build meal schedule for the week along with ingredients and ahead-of-time prep instructions"""
 
-        meal_options = list(self.recipes.keys())
+        meal_options = list(self.meals.keys())
         chosen_meals, meal_categories = [], []
 
         """Randomly select 3 meals for the weekly schedule"""
         while len(chosen_meals) < 3:
             chosen_meal = random.choice(meal_options)
-            category = self.recipes[chosen_meal]["category"]
+            category = self.meals[chosen_meal]["category"]
             """
 			Allow for only one meal per category per week
 			TODO: This can be done more elegantly by bucketing meals into
@@ -57,8 +57,8 @@ class PlanDinners:
         meals_list = [
             {"Day": day,
              "Meal": meal.title(),
-             "Ingredients": ", ".join(self.recipes[meal]["ingredients"]),
-             "Prep": ", ".join(self.recipes[meal]["prep"])}
+             "Ingredients": ", ".join(self.meals[meal]["ingredients"]),
+             "Prep": ", ".join(self.meals[meal]["prep"])}
             for day, meal in self.meal_schedule.items()
         ]
         self.meals_df = pd.DataFrame(meals_list)
@@ -82,7 +82,7 @@ class PlanDinners:
 
         """Create shopping list for meal ingredients"""
         shopping_list = list({item for meal in self.meal_schedule.values()
-                              for item in self.recipes[meal]["ingredients"]})
+                              for item in self.meals[meal]["ingredients"]})
         shopping_list.sort()
 
         """Pad lists to make them all the same length for a uniform dataframe"""

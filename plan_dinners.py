@@ -1,7 +1,6 @@
 import json
 import random
 import pandas as pd
-from typing import List
 from datetime import date
 
 class PlanDinners:
@@ -67,7 +66,7 @@ class PlanDinners:
 		# 				"Ingredients": ingredients,
 		# 				"Prep": prep},
 		# 				ignore_index=True
-		# 				)
+		# 			``	)
 		return meals_df
 
 if __name__ == "__main__":

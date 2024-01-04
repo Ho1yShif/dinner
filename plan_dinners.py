@@ -1,6 +1,6 @@
 """
 TODO
-Possibly upload menu file to Google Drive
+Possibly upload Excel output to shared Google Sheets
 UI
 """
 

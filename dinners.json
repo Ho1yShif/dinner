@@ -1,274 +1,288 @@
-[
-	{
-		"meal": "goodles",
-		"ingredients": [
-			"vegan goodles",
-			"pasta",
-			"garlic"
-		],
-		"category": "pasta",
-		"prep": []
-	},
-	{
-		"meal": "pasta bolognese",
-		"ingredients": [
-			"pasta",
-			"vegan bolognese sauce"
-		],
-		"category": "pasta",
-		"prep": []
-	},
-	{
-		"meal": "maple garlic chicken pasta",
-		"ingredients": [
-			"pasta",
-			"maple syrup",
-			"soy sauce",
-			"cornstarch",
-			"garlic",
-			"ginger",
-			"apple cider vinegar",
-			"fake chicken tenders"
-		],
-		"category": "pasta",
-		"prep": ["maple garlic sauce"]
-	},
-	{
-		"meal": "miso pasta",
-		"ingredients": [
-			"pasta",
-			"ginger",
-			"cornstarch",
-			"apple cider vinegar",
-			"white miso paste"
-		],
-		"category": "pasta",
-		"prep": ["miso sauce"]
-	},
-	{
-		"meal": "chili garlic noodles",
-		"ingredients": [
-			"thick noodles",
-			"dark soy sauce",
-			"soy sauce",
-			"garlic",
-			"edamame",
-			"red pepper flakes",
-			"black vinegar"
-		],
-		"category": "pasta",
-		"prep": ["chili garlic sauce"]
-	},
-	{
-		"meal": "mac n cheese with thyme breadcrumbs",
-		"ingredients": [
-			"lactose free cheese",
-			"whole grain mustard",
-			"pasta",
-			"milk",
-			"lactose free butter",
-			"breadcrumbs",
-			"tomatoes",
-			"fresh thyme"
-		],
-		"category": "pasta",
-		"prep": ["cheese sauce"]
-	},
-	{
-		"meal": "maple garlic tofu and rice",
-		"ingredients": [
-			"high protein tofu",
-			"maple syrup",
-			"soy sauce",
-			"cornstarch",
-			"ginger",
-			"garlic",
-			"apple cider vinegar",
-			"fake chicken tenders",
-			"rice"
-		],
-		"category": "tofu",
-		"prep": ["maple garlic sauce", "rice"]
-	},
-	{
-		"meal": "gochujang tofu and rice",
-		"ingredients": [
-			"high protein tofu",
-			"maple syrup",
-			"soy sauce",
-			"gochujang",
-			"cornstarch",
-			"ginger",
-			"garlic",
-			"apple cider vinegar",
-			"fake chicken tenders",
-			"rice"
-		],
-		"category": "tofu",
-		"prep": ["gochujang sauce", "rice"]
-	},
-	{
-		"meal": "orange steak tacos",
-		"ingredients": [
-			"beyond steak",
-			"tortillas",
-			"chipotle peppers in adobo",
-			"orange",
-			"cornstarch",
-			"ginger",
-			"garlic",
-			"cabbage",
-			"rice"
-		],
-		"category": "taco",
-		"prep": ["chipotle sauce", "pickled cabbage", "rice"]
-	},
-	{
-		"meal": "veggie pancakes with fake chicken",
-		"ingredients": [
-			"prepared cabbage slaw",
-			"garlic",
-			"flour",
-			"cornstarch",
-			"fake chicken tenders"
-		],
-		"category": "chicken",
-		"prep": ["pancake batter"]
-	},
-	{
-		"meal": "tomato gnocchi soup with sourdough",
-		"ingredients": [
-			"tomato puree",
-			"tomato paste",
-			"onion",
-			"garlic",
-			"frozen mixed vegetables",
-			"gnocchi",
-			"lemon",
-			"sourdough bread"
-		],
-		"category": "soup",
-		"prep": ["soup base"]
-	},
-	{
-		"meal": "chicken with smashed potatoes",
-		"ingredients": [
-			"fake chicken tenders",
-			"small potatoes",
-			"dill",
-			"nondairy yogurt",
-			"lemon"
-		],
-		"category": "chicken",
-		"prep": ["boiled potatoes"]
-	},
-	{
-		"meal": "baked potatoes",
-		"ingredients": [
-			"large russet potatoes",
-			"lactose free cheese",
-			"beyond beef",
-			"green onions"
-		],
-		"category": "potatoes",
-		"prep": ["boiled potatoes"]
-	},
-	{
-		"meal": "burgers with caramelized onions",
-		"ingredients": [
-			"beyond burgers",
-			"lactose free cheese",
-			"burger buns",
-			"whole grain mustard",
-			"lettuce",
-			"onions"
-		],
-		"category": "burgers",
-		"prep": []
-	},
-	{
-		"meal": "grilled cheese with tomato soup",
-		"ingredients": [
-			"ready-made tomato soup",
-			"sourdough bread",
-			"lactose free cheese",
-			"tomatoes"
-		],
-		"category": "soup",
-		"prep": []
-	},
-	{
-		"meal": "frozen pizza with salad",
-		"ingredients": [
-			"daiya frozen pizza",
-			"salad kit"
-		],
-		"category": "pizza",
-		"prep": []
-	},
-	{
-		"meal": "pita pizza",
-		"ingredients": [
-			"soft pitas",
-			"tomato sauce",
-			"lactose free cheese",
-			"mushrooms"
-		],
-		"category": "pizza",
-		"prep": ["sauteed mushrooms"]
-	},
-	{
-		"meal": "curry with rice",
-		"ingredients": [
-			"garlic",
-			"ginger",
-			"jalapenos",
-			"red lentils",
-			"curry powder",
-			"garam masala",
-			"coconut milk",
-			"cumin",
-			"coriander",
-			"tumeric",
-			"vegetable broth",
-			"lemon",
-			"canned crushed tomatoes",
-			"rice"
-		],
-		"category": "soup",
-		"prep": ["curry aromatics", "measure spices", "rice"]
-	},
-	{
-		"meal": "garlic yogurt pasta",
-		"ingredients": [
-			"nondairy yogurt",
-			"garlic",
-			"pasta"
-		],
-		"category": "pasta",
-		"prep": ["garlic"]
-	},
-	{
-		"meal": "pesto pasta",
-		"ingredients": [
-			"vegan pesto",
-			"garlic",
-			"pasta"
-		],
-		"category": "pasta",
-		"prep": ["garlic"]
-	},
-	{
-		"meal": "sheet pan gnocchi",
-		"ingredients": [
-			"vegan pesto",
-			"nondairy yogurt",
-			"lemon",
-			"gnocchi",
-			"onion",
-			"rosemary"
-		],
-		"category": "potatoes",
-		"prep": ["onion", "dressing"]
-	}
-]
+{
+  "recipes": [
+    {
+      "name": "goodles",
+      "ingredients": ["vegan goodles", "pasta", "garlic"],
+      "category": "pasta",
+      "prep": []
+    },
+    {
+      "name": "pasta bolognese",
+      "ingredients": ["pasta", "vegan bolognese sauce"],
+      "category": "pasta",
+      "prep": []
+    },
+    {
+      "name": "maple garlic chicken pasta",
+      "ingredients": [
+        "pasta",
+        "maple syrup",
+        "soy sauce",
+        "cornstarch",
+        "garlic",
+        "ginger",
+        "apple cider vinegar",
+        "fake chicken tenders"
+      ],
+      "category": "pasta",
+      "prep": ["maple garlic sauce"]
+    },
+    {
+      "name": "miso pasta",
+      "ingredients": [
+        "pasta",
+        "ginger",
+        "cornstarch",
+        "apple cider vinegar",
+        "white miso paste"
+      ],
+      "category": "pasta",
+      "prep": ["miso sauce"]
+    },
+    {
+      "name": "chili garlic noodles",
+      "ingredients": [
+        "thick noodles",
+        "dark soy sauce",
+        "soy sauce",
+        "garlic",
+        "edamame",
+        "red pepper flakes",
+        "black vinegar"
+      ],
+      "category": "pasta",
+      "prep": ["chili garlic sauce"]
+    },
+    {
+      "name": "mac n cheese with thyme breadcrumbs",
+      "ingredients": [
+        "lactose free cheese",
+        "whole grain mustard",
+        "pasta",
+        "milk",
+        "lactose free butter",
+        "breadcrumbs",
+        "tomatoes",
+        "fresh thyme"
+      ],
+      "category": "pasta",
+      "prep": ["cheese sauce"]
+    },
+    {
+      "name": "maple garlic tofu and rice",
+      "ingredients": [
+        "high protein tofu",
+        "maple syrup",
+        "soy sauce",
+        "cornstarch",
+        "ginger",
+        "garlic",
+        "apple cider vinegar",
+        "fake chicken tenders",
+        "rice"
+      ],
+      "category": "tofu",
+      "prep": ["maple garlic sauce", "rice"]
+    },
+    {
+      "name": "gochujang tofu and rice",
+      "ingredients": [
+        "high protein tofu",
+        "maple syrup",
+        "soy sauce",
+        "gochujang",
+        "cornstarch",
+        "ginger",
+        "garlic",
+        "apple cider vinegar",
+        "fake chicken tenders",
+        "rice"
+      ],
+      "category": "tofu",
+      "prep": ["gochujang sauce", "rice"]
+    },
+    {
+      "name": "orange steak tacos",
+      "ingredients": [
+        "beyond steak",
+        "tortillas",
+        "chipotle peppers in adobo",
+        "orange",
+        "cornstarch",
+        "ginger",
+        "garlic",
+        "cabbage",
+        "rice"
+      ],
+      "category": "taco",
+      "prep": ["chipotle sauce", "pickled cabbage", "rice"]
+    },
+    {
+      "name": "veggie pancakes with fake chicken",
+      "ingredients": [
+        "prepared cabbage slaw",
+        "garlic",
+        "flour",
+        "cornstarch",
+        "fake chicken tenders"
+      ],
+      "category": "chicken",
+      "prep": ["pancake batter"]
+    },
+    {
+      "name": "tomato gnocchi soup with sourdough",
+      "ingredients": [
+        "tomato puree",
+        "tomato paste",
+        "onion",
+        "garlic",
+        "frozen mixed vegetables",
+        "gnocchi",
+        "lemon",
+        "sourdough bread"
+      ],
+      "category": "soup",
+      "prep": ["soup base"]
+    },
+    {
+      "name": "chicken with smashed potatoes",
+      "ingredients": [
+        "fake chicken tenders",
+        "small potatoes",
+        "dill",
+        "nondairy yogurt",
+        "lemon"
+      ],
+      "category": "chicken",
+      "prep": ["boiled potatoes"]
+    },
+    {
+      "name": "baked potatoes",
+      "ingredients": [
+        "large russet potatoes",
+        "lactose free cheese",
+        "beyond beef",
+        "green onions"
+      ],
+      "category": "potatoes",
+      "prep": ["boiled potatoes"]
+    },
+    {
+      "name": "burgers with caramelized onions",
+      "ingredients": [
+        "beyond burgers",
+        "lactose free cheese",
+        "burger buns",
+        "whole grain mustard",
+        "lettuce",
+        "onions"
+      ],
+      "category": "burgers",
+      "prep": []
+    },
+    {
+      "name": "grilled cheese with tomato soup",
+      "ingredients": [
+        "ready-made tomato soup",
+        "sourdough bread",
+        "lactose free cheese",
+        "tomatoes"
+      ],
+      "category": "soup",
+      "prep": []
+    },
+    {
+      "name": "frozen pizza with salad",
+      "ingredients": ["daiya frozen pizza", "salad kit"],
+      "category": "pizza",
+      "prep": []
+    },
+    {
+      "name": "pita pizza",
+      "ingredients": [
+        "soft pitas",
+        "tomato sauce",
+        "lactose free cheese",
+        "mushrooms"
+      ],
+      "category": "pizza",
+      "prep": ["sauteed mushrooms"]
+    },
+    {
+      "name": "curry with rice",
+      "ingredients": [
+        "garlic",
+        "ginger",
+        "jalapenos",
+        "red lentils",
+        "curry powder",
+        "garam masala",
+        "coconut milk",
+        "cumin",
+        "coriander",
+        "tumeric",
+        "vegetable broth",
+        "lemon",
+        "canned crushed tomatoes",
+        "rice"
+      ],
+      "category": "soup",
+      "prep": ["curry aromatics", "measure spices", "rice"]
+    },
+    {
+      "name": "garlic yogurt pasta",
+      "ingredients": ["nondairy yogurt", "garlic", "pasta"],
+      "category": "pasta",
+      "prep": ["garlic"]
+    },
+    {
+      "name": "pesto pasta",
+      "ingredients": ["vegan pesto", "garlic", "pasta"],
+      "category": "pasta",
+      "prep": ["garlic"]
+    },
+    {
+      "name": "sheet pan gnocchi",
+      "ingredients": [
+        "vegan pesto",
+        "nondairy yogurt",
+        "lemon",
+        "gnocchi",
+        "onion",
+        "rosemary"
+      ],
+      "category": "potatoes",
+      "prep": ["onion", "dressing"]
+    }
+  ],
+  "shared_ingredients": {
+    "staples": [
+      "garlic",
+      "olive oil",
+      "neutral oil",
+      "salt",
+      "pepper",
+      "vegan butter",
+      "eggs",
+      "mayonnaise",
+      "vegetable broth",
+      "vegan parmesan",
+      "vegan sliced cheese",
+      "chia seeds"
+    ],
+    "fresh_vegetables": [
+      "spinach",
+      "carrots",
+      "asparagus",
+      "orange/yellow peppers",
+      "cabbage",
+      "zucchini",
+      "squash",
+      "cucumber",
+      "snap peas",
+      "brussels sprouts"
+    ],
+    "frozen_vegetables": ["broccoli", "cauliflower", "peas", "green beans"],
+    "toppings": ["hemp seeds", "pumpkin seeds", "avocado", "cottage cheese"]
+  }
+}

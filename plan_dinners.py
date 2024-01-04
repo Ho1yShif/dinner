@@ -1,10 +1,10 @@
 import json
 import random
+import pandas as pd
 from typing import List
 from datetime import date
-import pandas as pd
 
-class plan_dinners:
+class PlanDinners:
 	"""
 	Plan 3 weekly dinners
 	Display plan and shopping list in a user-friendly format using prints
@@ -44,8 +44,6 @@ class plan_dinners:
 		chosen_meals.extend(random_meals)
 		random.shuffle(chosen_meals)
 
-		print(f"Length of chosen meals: {len(chosen_meals)}")
-
 		meal_schedule = {
 			"Monday": chosen_meals[0],
 			"Tuesday": chosen_meals[1],
@@ -53,12 +51,26 @@ class plan_dinners:
 		}
 
 		print(f"Menu for the week of {self.today}:")
-		df = pd.DataFrame(columns=["Day", "Meal", "Ingredients", "Prep"])
-		for day, meal in meal_schedule.items():
-			ingredients = self.dinners[meal]["ingredients"]
-			prep = self.dinners[meal]["prep"]
-			df = df.append({"Day": day, "Meal": meal, "Ingredients": ingredients, "Prep": prep}, ignore_index=True)
+		meals_list = [
+						{"Day": day, "Meal": meal,
+	   					"Ingredients": self.dinners[meal]["ingredients"],
+						"Prep": self.dinners[meal]["prep"]}
+						for day, meal in meal_schedule.items()
+					]
+		meals_df = pd.DataFrame(meals_list)
+		# meals_df = pd.DataFrame(columns=["Day", "Meal", "Ingredients", "Prep"])
+		# for day, meal in meal_schedule.items():
+		# 	ingredients = self.dinners[meal]["ingredients"]
+		# 	prep = self.dinners[meal]["prep"]
+		# 	meals_df = meals_df.append(
+		# 				{"Day": day, "Meal": meal,
+		# 				"Ingredients": ingredients,
+		# 				"Prep": prep},
+		# 				ignore_index=True
+		# 				)
+		return meals_df
 
-		print(df)
-
+if __name__ == "__main__":
+	dinners = PlanDinners()
+	dinners.menu()
 

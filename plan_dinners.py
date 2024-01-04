@@ -30,6 +30,7 @@ class PlanDinners:
 				"salt", "pepper", "vegan butter",
 				"eggs", "mayonnaise", "vegetable broth",
 				"vegan parmesan", "vegan cheese"]
+		self.staples.sort()
 
 		self.fresh_veg = ["spinach", "carrots", "asparagus",
 					"orange peppers", "yellow peppers", "cabbage",
@@ -68,35 +69,53 @@ class PlanDinners:
 						"Prep": ", ".join(self.dinners[meal]["prep"])}
 						for day, meal in self.meal_schedule.items()
 					]
-		meals_df = pd.DataFrame(meals_list)
+		self.meals_df = pd.DataFrame(meals_list)
 
 		"""Display meal schedule"""
 		print(f"Menu for the week of {self.today}")
 		for day, meal in self.meal_schedule.items():
 			print(f"{day}: {meal.title()}")
 
-		return meals_df
+		return self.meals_df
 
-	def shopping(self, meals_df:pd.DataFrame):
-		"""Randomly choose items from vegetable lists"""
+	def shopping(self):
+		"""Randomly choose items from vegetable and topping lists and create list"""
 		fresh_veg_items = random.sample(self.fresh_veg, 2)
 		frozen_veg_item = random.sample(self.frozen_veg, 1)
 		topping_items = random.sample(self.toppings, 2)
+		veggies_toppings = fresh_veg_items + frozen_veg_item + topping_items
+		veggies_toppings.sort()
 
-		"""Add meal ingredients"""
+		"""Create shopping list for meal ingredients"""
 		shopping_list = list({item for meal in self.meal_schedule.values() for item in self.dinners[meal]["ingredients"]})
-		shopping_list = shopping_list + fresh_veg_items + frozen_veg_item + topping_items
-		shopping_list = list(set(shopping_list))
 		shopping_list.sort()
 
-		"""Create dataframe where each shopping list ingredient is on its own line"""
-		shopping_df = pd.DataFrame({"Check Staples": self.staples,
-							 		 "Ingredients": shopping_list})
+		"""Pad lists to make them all the same length for the dataframe"""
+		lists = [self.staples, shopping_list, veggies_toppings]
+		max_len = max(len(lst) for lst in lists)
+		for idx, lst in enumerate(lists):
+			lists[idx] += [''] * (max_len - len(lst))
 
+		"""Create dataframe where each ingredient has its own line"""
+		self.shopping_df = pd.DataFrame(
+						{
+							"Check Staples": self.staples,
+							"Veggies and Toppings": veggies_toppings,
+							"Meal Ingredients": shopping_list
+						}
+						)
+		return self.shopping_df
 
+	def export(self):
+		"""Export meal schedule and shopping list to one Excel workbook with 2 tabs"""
+		excel_path = f"~/Desktop/dinner_plans_{self.today}.xlsx"
+		with pd.ExcelWriter(excel_path) as writer:
+			self.meals_df.to_excel(writer, sheet_name="Meals", index=False)
+			self.shopping_df.to_excel(writer, sheet_name="Shopping", index=False)
+		print(f"Exported meal plan to {excel_path}")
 
 if __name__ == "__main__":
 	dinners = PlanDinners()
 	schedule = dinners.schedule_meals()
-	shop = dinners.shopping(schedule)
-
+	shop = dinners.shopping()
+	dinners.export()

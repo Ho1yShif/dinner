@@ -1,23 +1,38 @@
-"""
-TODO
-Possibly upload Excel output to shared Google Sheets
-UI
-"""
-
+import os
 import json
 import random
 import pandas as pd
 from datetime import date
+from googleapiclient.discovery import build
+from google.oauth2 import service_account
+from googleapiclient.errors import HttpError
 
 
 class PlanDinners:
     """
     Plan 3 weekly dinners along with a shopping list
-    Export to Excel for easy viewing
+    Exports to Google Sheets for easy viewing
     """
 
     def __init__(self):
-        self.today = str(date.today()).replace("-", "_")
+        self.today = str(date.today())
+
+        """Authenticate with Google Sheets API"""
+        self.spreadsheet_id = os.environ.get("SPREADSHEET_ID")
+        if not self.spreadsheet_id:
+            raise ValueError(
+                "Please set the SPREADSHEET_ID environment variable to the ID of your Google Sheet."
+            )
+
+        service_account_info = os.environ.get("SERVICE_ACCOUNT")
+        if not service_account_info:
+            raise ValueError(
+                "Please set the SERVICE_ACCOUNT environment variable to the contents of your service account JSON file."
+            )
+        self.credentials = service_account.Credentials.from_service_account_info(
+            info=json.loads(service_account_info),
+            scopes=['https://www.googleapis.com/auth/spreadsheets']
+        )
 
         """Read data from JSON"""
         with open("dinners.json", "r") as file:
@@ -100,19 +115,51 @@ class PlanDinners:
 
         return self.shopping_df
 
-    def export(self):
-        """Schedule meals, create shopping list, and export them to an Excel workbook with two separate sheets"""
+    def update_sheet(self, range_name, value_input_option, values):
+        try:
+            service = build("sheets", "v4", credentials=self.credentials)
+            body = {"values": values}
+            result = (
+                service.spreadsheets()
+                .values()
+                .update(
+                    spreadsheetId=self.spreadsheet_id,
+                    range=range_name,
+                    valueInputOption=value_input_option,
+                    body=body,
+                )
+                .execute()
+            )
+            print(f"{result.get('updatedCells')} cells updated.")
+            return result
+        except HttpError as error:
+            print(f"An error occurred: {error}")
+            return error
 
+    def export(self):
+        """Schedule meals, create shopping list, and export them a Google Sheet with two separate sheets"""
+
+        # Pick meals and create shopping list
         PlanDinners.schedule_meals(self)
         PlanDinners.shopping(self)
 
-        excel_path = f"~/Desktop/dinners_{self.today}.xlsx"
-        with pd.ExcelWriter(excel_path) as writer:
-            self.meals_df.to_excel(writer, sheet_name="Meals", index=False)
-            self.shopping_df.to_excel(
-                writer, sheet_name="Shopping", index=False)
-
-        print(f"Exported meal plan to {excel_path}")
+        # Update Google Sheet with latest meal plan
+        PlanDinners.update_sheet(
+            self,
+            "Meals!A:E",
+            "USER_ENTERED",
+            # Include column headers and timestamp
+            [self.meals_df.columns.values.tolist() + [f"Menu for the week of {self.today}"]] +
+            self.meals_df.values.tolist()
+        )
+        PlanDinners.update_sheet(
+            self,
+            "Shopping!A:C",
+            "USER_ENTERED",
+            # Include column headers
+            [self.shopping_df.columns.values.tolist()] +
+            self.shopping_df.values.tolist()
+        )
 
 
 if __name__ == "__main__":

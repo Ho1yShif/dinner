@@ -23,7 +23,7 @@ class PlanDinners:
 		"""Read dinners from JSON"""
 		with open("dinners.json", "r") as file:
 			dinners_list = json.load(file)
-			self.dinners = {dinner['meal']: dinner for dinner in dinners_list}
+			self.dinners = {dinner["meal"]: dinner for dinner in dinners_list}
 
 		"""Set staple lists"""
 		self.staples = ["garlic", "olive oil", "neutral oil",
@@ -64,8 +64,8 @@ class PlanDinners:
 		meals_list = [
 						{"Day": day,
 						"Meal": meal.title(),
-						"Ingredients": ', '.join(self.dinners[meal]["ingredients"]),
-						"Prep": ', '.join(self.dinners[meal]["prep"])}
+						"Ingredients": ", ".join(self.dinners[meal]["ingredients"]),
+						"Prep": ", ".join(self.dinners[meal]["prep"])}
 						for day, meal in self.meal_schedule.items()
 					]
 		meals_df = pd.DataFrame(meals_list)
@@ -78,10 +78,25 @@ class PlanDinners:
 		return meals_df
 
 	def shopping(self, meals_df:pd.DataFrame):
+		"""Randomly choose items from vegetable lists"""
+		fresh_veg_items = random.sample(self.fresh_veg, 2)
+		frozen_veg_item = random.sample(self.frozen_veg, 1)
+		topping_items = random.sample(self.toppings, 2)
+
+		"""Add meal ingredients"""
 		shopping_list = list({item for meal in self.meal_schedule.values() for item in self.dinners[meal]["ingredients"]})
+		shopping_list = shopping_list + fresh_veg_items + frozen_veg_item + topping_items
+		shopping_list = list(set(shopping_list))
+		shopping_list.sort()
+
+		"""Create dataframe where each shopping list ingredient is on its own line"""
+		shopping_df = pd.DataFrame({"Check Staples": self.staples,
+							 		 "Ingredients": shopping_list})
+
 
 
 if __name__ == "__main__":
 	dinners = PlanDinners()
 	schedule = dinners.schedule_meals()
+	shop = dinners.shopping(schedule)
 

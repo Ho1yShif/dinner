@@ -24,7 +24,6 @@ class PlanDinners:
 		with open("dinners.json", "r") as file:
 			dinners_list = json.load(file)
 			self.dinners = {dinner['meal']: dinner for dinner in dinners_list}
-			print(type(self.dinners))
 
 		"""Set staple lists"""
 		self.staples = ["garlic", "olive oil", "neutral oil",
@@ -42,16 +41,24 @@ class PlanDinners:
 		self.toppings = ["hemp seeds", "pumpkin seeds", "avocado", "cottage cheese"]
 
 
-	def schedule(self):
-		meal_options = list(self.dinners.keys())
+	def schedule_meals(self):
 		remaining_meals = 3
+		meal_options = list(self.dinners.keys())
 
 		"""Randomly select 3 meals for the weekly schedule"""
-		chosen_meals = random.choices(population=meal_options,
-									k=remaining_meals)
-		random.shuffle(chosen_meals)
+		chosen_meals, meal_categories = [], []
+		while len(chosen_meals) < 3:
+			chosen_meal = random.choice(meal_options)
+			category = self.dinners[chosen_meal]["category"]
+			"""Allow for only one meal per category per week"""
+			if category not in meal_categories:
+				meal_categories.append(category)
+				meal_options.remove(chosen_meal)
+				chosen_meals.append(chosen_meal)
+			else:
+				continue
 
-		meal_schedule = dict(zip(["Monday", "Tuesday", "Wednesday"], chosen_meals))
+		self.meal_schedule = dict(zip(["Monday", "Tuesday", "Wednesday"], chosen_meals))
 
 		"""Create meals dataframe"""
 		meals_list = [
@@ -59,18 +66,22 @@ class PlanDinners:
 						"Meal": meal.title(),
 						"Ingredients": ', '.join(self.dinners[meal]["ingredients"]),
 						"Prep": ', '.join(self.dinners[meal]["prep"])}
-						for day, meal in meal_schedule.items()
+						for day, meal in self.meal_schedule.items()
 					]
 		meals_df = pd.DataFrame(meals_list)
 
 		"""Display meal schedule"""
 		print(f"Menu for the week of {self.today}")
-		for day, meal in meal_schedule.items():
+		for day, meal in self.meal_schedule.items():
 			print(f"{day}: {meal.title()}")
 
 		return meals_df
 
+	def shopping(self, meals_df:pd.DataFrame):
+		shopping_list = list({item for meal in self.meal_schedule.values() for item in self.dinners[meal]["ingredients"]})
+
+
 if __name__ == "__main__":
 	dinners = PlanDinners()
-	schedule = dinners.menu()
+	schedule = dinners.schedule_meals()
 

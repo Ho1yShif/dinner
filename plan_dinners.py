@@ -137,7 +137,7 @@ class PlanDinners:
             return error
 
     def export(self):
-        """Schedule meals, create shopping list, and export them a Google Sheet with two separate sheets"""
+        """Schedule meals, create shopping list, and update a Google Sheet with Meals and Shopping sheets"""
 
         # Pick meals and create shopping list
         PlanDinners.schedule_meals(self)

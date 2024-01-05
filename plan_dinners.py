@@ -1,6 +1,7 @@
 import os
 import json
 import random
+import base64
 import pandas as pd
 from datetime import date
 from googleapiclient.discovery import build
@@ -30,7 +31,10 @@ class PlanDinners:
                 "Please set the SERVICE_ACCOUNT environment variable to the contents of your service account JSON file."
             )
         self.credentials = service_account.Credentials.from_service_account_info(
-            info=json.loads(service_account_info),
+            info=json.loads(
+                # The JSON string is B64-encoded to avoid newlines causing issues in the pipeline
+                base64.b64decode(service_account_info.encode("ascii"))
+            ),
             scopes=['https://www.googleapis.com/auth/spreadsheets']
         )
 

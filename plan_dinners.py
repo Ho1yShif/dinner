@@ -3,7 +3,7 @@ import json
 import random
 import base64
 import pandas as pd
-from datetime import date
+import datetime
 from googleapiclient.discovery import build
 from google.oauth2 import service_account
 from googleapiclient.errors import HttpError
@@ -16,7 +16,9 @@ class PlanDinners:
     """
 
     def __init__(self):
-        self.today = str(date.today())
+        today = datetime.date.today()
+        self.start_of_week = today + datetime.timedelta(days=-today.weekday())
+        self.week_timestamp = self.start_of_week.strftime('%b %d \'%y')
 
         """Authenticate with Google Sheets API"""
         self.spreadsheet_id = os.environ.get("SPREADSHEET_ID")
@@ -83,7 +85,7 @@ class PlanDinners:
         self.meals_df = pd.DataFrame(meals_list)
 
         """Display meal schedule"""
-        print(f"Menu for the week of {self.today}")
+        print(f"Menu for the week of {self.week_timestamp}")
         for day, meal in self.meal_schedule.items():
             print(f"{day}: {meal.title()}")
 
@@ -153,7 +155,7 @@ class PlanDinners:
             "Meals!A:E",
             "USER_ENTERED",
             # Include column headers and timestamp
-            [self.meals_df.columns.values.tolist() + [f"Menu for the week of {self.today}"]] +
+            [self.meals_df.columns.values.tolist() + [f"Menu for the week of {self.week_timestamp}"]] +
             self.meals_df.values.tolist()
         )
         PlanDinners.update_sheet(

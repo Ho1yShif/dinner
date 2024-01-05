@@ -1,5 +1,6 @@
 {
   "editor.formatOnSave": true,
+  "editor.detectIndentation": true,
   "files.trimTrailingWhitespace": true,
   "files.insertFinalNewline": true,
   "[python]": {

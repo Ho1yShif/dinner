@@ -267,7 +267,7 @@
       "mayonnaise",
       "vegetable broth",
       "vegan parmesan",
-      "vegan sliced cheese",
+      "lactose-free cheese",
       "chia seeds"
     ],
     "fresh_vegetables": [
@@ -282,7 +282,12 @@
       "snap peas",
       "brussels sprouts"
     ],
-    "frozen_vegetables": ["broccoli", "cauliflower", "peas", "green beans"],
-    "toppings": ["hemp seeds", "pumpkin seeds", "avocado", "cottage cheese"]
+    "frozen_vegetables": ["broccoli", "cauliflower",
+                          "peas", "green beans", "mixed vegetables"],
+    "toppings": ["hemp seeds", "pumpkin seeds", "avocado",
+                "cottage cheese", "almond butter", "hummus",
+                "strawberries", "bananas", "blueberries",
+                "raspberries", "blackberries", "peaches",
+                "seeds and nuts mix"]
   }
 }

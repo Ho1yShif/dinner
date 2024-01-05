@@ -143,11 +143,11 @@ class PlanDinners:
     def export(self):
         """Schedule meals, create shopping list, and update a Google Sheet with Meals and Shopping sheets"""
 
-        # Pick meals and create shopping list
+        """Pick meals and create shopping list"""
         PlanDinners.schedule_meals(self)
         PlanDinners.shopping(self)
 
-        # Update Google Sheet with latest meal plan
+        """Update Google Sheet with latest meal plan"""
         PlanDinners.update_sheet(
             self,
             "Meals!A:E",

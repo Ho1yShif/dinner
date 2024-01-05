@@ -32,7 +32,7 @@ class PlanDinners:
             )
         self.credentials = service_account.Credentials.from_service_account_info(
             info=json.loads(
-                # The JSON string is B64-encoded to avoid newlines causing issues in the pipeline
+                # The JSON string is B64-encoded to avoid control chars causing issues in the pipeline
                 base64.b64decode(service_account_info.encode("ascii"))
             ),
             scopes=['https://www.googleapis.com/auth/spreadsheets']

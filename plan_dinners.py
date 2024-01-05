@@ -1,6 +1,7 @@
 import os
 import json
 import random
+import base64
 import pandas as pd
 from datetime import date
 from googleapiclient.discovery import build
@@ -30,7 +31,10 @@ class PlanDinners:
 				"Please set the SERVICE_ACCOUNT environment variable to the contents of your service account JSON file."
 			)
 		self.credentials = service_account.Credentials.from_service_account_info(
-			info=json.loads(service_account_info),
+			info=json.loads(
+				# The JSON string is B64-encoded to avoid control chars causing issues in the pipeline
+				base64.b64decode(service_account_info.encode("ascii"))
+			),
 			scopes=['https://www.googleapis.com/auth/spreadsheets']
 		)
 
@@ -139,11 +143,11 @@ class PlanDinners:
 	def export(self):
 		"""Schedule meals, create shopping list, and update a Google Sheet with Meals and Shopping sheets"""
 
-		# Pick meals and create shopping list
+		"""Pick meals and create shopping list"""
 		PlanDinners.schedule_meals(self)
 		PlanDinners.shopping(self)
 
-		# Update Google Sheet with latest meal plan
+		"""Update Google Sheet with latest meal plan"""
 		PlanDinners.update_sheet(
 			self,
 			"Meals!A:E",
@@ -163,6 +167,8 @@ class PlanDinners:
 
 		print(f"Successfully updated Google Sheet menu at the following link:")
 		print("https://docs.google.com/spreadsheets/d/17fn-HNkRlrXHiapxXC-Uallu2zBQSiASRTRY3Hw8Ynk/edit#gid=0")
+
+
 
 if __name__ == "__main__":
 	dinners = PlanDinners()

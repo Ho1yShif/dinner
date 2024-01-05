@@ -9,7 +9,8 @@ Example:
 ## How to use
 
 1. Create a Google Sheet with two sheets, `Meals` and `Shopping`
-![image](https://github.com/Ho1yShif/dinner/assets/40185666/2c688c51-7fac-4ad9-b3f6-7f885b261be1)
+
+   ![image](https://github.com/Ho1yShif/dinner/assets/40185666/2c688c51-7fac-4ad9-b3f6-7f885b261be1)
 
 2. Set up a Google Cloud service account with access to the Google Sheets API and create a new JSON key ([Learn more about Service Accounts.](https://cloud.google.com/iam/docs/service-account-overview?authuser=4))
    - Replace the `\n` in the key with `\\n` so Python's json library can parse it

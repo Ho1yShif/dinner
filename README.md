@@ -17,7 +17,7 @@ Example:
    - Encode the santized key JSON in base64 so it can be easily stored in GitHub Secrets
 
 3. Fork this repo
-   - You may want to edit the `dinners.json` file to include your own preferred meals
+   - Customize your meal plan using the `dinners.json` file
 
 4. Set repo actions Secrets
     - `SERVICE_ACCOUNT` is the Google service account JSON file encoded in base64
@@ -25,6 +25,6 @@ Example:
 
 ## How it works
 
-A GitHub Action is scheduled each week and runs the `plan_dinners.py` script. This script will read the `dinners.json` file and randomly select meals for each day of the week. It won't pick the same category of meal more than once to avoid making similar meals every day.
+A GitHub Action is scheduled to run the `plan_dinners.py` script weekly at 3 AM on Saturday. This script will read the `dinners.json` file and randomly select meals for each day of the week. Each meal category will be represented only once per week to avoid repetition.
 
-It will then update the `Meals` sheet with the chosen meals and update the `Shopping` sheet with the ingredients needed for those meals. The shopping list will also include a reminder to check if you are stocked on staples like eggs, bread, oil, etc.
+After making selections, the script then updates the `Meals` sheet with the chosen meals and updates the `Shopping` sheet with the ingredients needed for those meals. The shopping list will also include a reminder to check if you are stocked on staples like eggs, bread, oil, etc.

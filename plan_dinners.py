@@ -21,7 +21,7 @@ class PlanDinners:
     def __init__(self):
         today = datetime.date.today()
         self.start_of_week = today + datetime.timedelta(days=6-today.weekday())
-        self.week_timestamp = self.start_of_week.strftime('%b %d \'%y')
+        self.week_timestamp = self.start_of_week.strftime('%b %d, %Y')
 
         """Authenticate with Google Sheets API"""
         self.spreadsheet_id = os.environ.get("SPREADSHEET_ID")
@@ -78,14 +78,16 @@ class PlanDinners:
         """Create meal schedule and dataframe"""
         self.meal_schedule = dict(
             zip(["Monday", "Tuesday", "Wednesday"], chosen_meals))
-        meals_list = [
-            {"Day": day,
-             "Meal": meal.title(),
-             "Ingredients": ", ".join(self.meals[meal]["ingredients"]),
-             "Prep": ", ".join(self.meals[meal]["prep"])}
+        meals_dict = {
+            day: [
+                meal.title(),
+                ", ".join(self.meals[meal]["ingredients"]),
+                ", ".join(self.meals[meal]["prep"])
+            ]
             for day, meal in self.meal_schedule.items()
-        ]
-        self.meals_df = pd.DataFrame(meals_list)
+        }
+        self.meals_df = pd.DataFrame(
+            meals_dict, index=["Meal", "Ingredients", "Prep"])
 
         """Display meal schedule"""
         print(f"Menu for the week of {self.week_timestamp}")
@@ -152,13 +154,17 @@ class PlanDinners:
         PlanDinners.schedule_meals(self)
         PlanDinners.shopping(self)
 
+        """Insert row headers headers and timestamp"""
+        self.meals_df.insert(0, f"Menu – Week of {self.week_timestamp}", [
+                             "Meal", "Ingredients", "Prep"], True)
+
         """Update Google Sheet with latest meal plan"""
         PlanDinners.update_sheet(
             self,
             "Meals!A:E",
             "USER_ENTERED",
-            # Include column headers and timestamp
-            [self.meals_df.columns.values.tolist() + [f"Menu for the week of {self.week_timestamp}"]] +
+            # Include column headers
+            [self.meals_df.columns.values.tolist()] +
             self.meals_df.values.tolist()
         )
         PlanDinners.update_sheet(

@@ -154,7 +154,6 @@ class PlanDinners:
 
         """Transpose dataframe to make it easier to read"""
         self.meals_df = self.meals_df.T
-        self.shopping_df = self.shopping_df.T
 
         """Update Google Sheet with latest meal plan"""
         PlanDinners.update_sheet(

@@ -154,13 +154,17 @@ class PlanDinners:
         PlanDinners.schedule_meals(self)
         PlanDinners.shopping(self)
 
+        """Insert row headers headers and timestamp"""
+        self.meals_df.insert(0, f"Menu – Week of {self.week_timestamp}", [
+                             "Meal", "Ingredients", "Prep"], True)
+
         """Update Google Sheet with latest meal plan"""
         PlanDinners.update_sheet(
             self,
             "Meals!A:E",
             "USER_ENTERED",
-            # Include column headers and timestamp
-            [self.meals_df.columns.values.tolist() + [f"Menu for the week of {self.week_timestamp}"]] +
+            # Include column headers
+            [self.meals_df.columns.values.tolist()] +
             self.meals_df.values.tolist()
         )
         PlanDinners.update_sheet(

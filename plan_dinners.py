@@ -21,7 +21,7 @@ class PlanDinners:
     def __init__(self):
         today = datetime.date.today()
         self.start_of_week = today + datetime.timedelta(days=6-today.weekday())
-        self.week_timestamp = self.start_of_week.strftime('%b %d \'%y')
+        self.week_timestamp = self.start_of_week.strftime('%b %d, %Y')
 
         """Authenticate with Google Sheets API"""
         self.spreadsheet_id = os.environ.get("SPREADSHEET_ID")

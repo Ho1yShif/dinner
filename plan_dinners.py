@@ -64,10 +64,10 @@ class PlanDinners:
             chosen_meal = random.choice(meal_options)
             category = self.meals[chosen_meal]["category"]
             """
-			Allow for only one meal per category per week
-			TODO: This can be done more elegantly by bucketing meals into
-			categories, then picking random category buckets and removing the category once used
-			"""
+            Allow for only one meal per category per week
+            TODO: This can be done more elegantly by bucketing meals into
+            categories, then picking random category buckets and removing the category once used
+            """
             if category not in meal_categories:
                 meal_categories.append(category)
                 meal_options.remove(chosen_meal)

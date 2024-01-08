@@ -56,13 +56,13 @@ class PlanDinners:
             scopes=['https://www.googleapis.com/auth/spreadsheets']
         )
 
-    def __repr__(self):
-        print(self.chosen_meals)
-        return f"PlanDinners()"
-
     def __str__(self):
         for day, meal in self.meal_schedule.items():
-            print(f"{day}: {meal.title()}"))
+            print(f"{day}: {meal.title()}")
+        return f"PlanDinners()"
+
+    def __repr__(self):
+        print(self.chosen_meals)
         return f"PlanDinners()"
 
     def schedule_meals(self):

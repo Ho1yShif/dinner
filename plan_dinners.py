@@ -15,10 +15,7 @@ load_dotenv()
 
 
 class PlanDinners:
-    """
-    Plan 3 weekly dinners along with a shopping list
-    Exports to Google Sheets for easy viewing
-    """
+    """Plan weekly dinners along with a shopping list; export to Google Sheets for easy viewing"""
 
     def read_dinners_json(self):
         """Read data from dinners.json"""

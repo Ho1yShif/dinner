@@ -86,6 +86,10 @@ class PlanDinners:
         self.meals_df = pd.DataFrame(
             meals_dict, index=weekdays).T
 
+        """Insert row headers and timestamp"""
+        self.meals_df.insert(0, f"Menu – Week of {self.week_timestamp}", [
+                             "Meal", "Ingredients", "Prep"], True)
+
         """Display meal schedule"""
         print(f"Menu for the week of {self.week_timestamp}")
         for day, meal in self.meal_schedule.items():
@@ -149,10 +153,6 @@ class PlanDinners:
         """Pick meals and create shopping list"""
         PlanDinners.schedule_meals(self)
         PlanDinners.shopping(self)
-
-        """Insert row headers headers and timestamp"""
-        self.meals_df.insert(0, f"Menu – Week of {self.week_timestamp}", [
-                             "Meal", "Ingredients", "Prep"], True)
 
         """Update Google Sheet with latest meal plan"""
         PlanDinners.update_sheet(

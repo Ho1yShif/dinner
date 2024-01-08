@@ -68,6 +68,7 @@ class PlanDinners:
 
     def schedule_meals(self):
         """Build meal schedule for the week along with ingredients and ahead-of-time prep instructions"""
+        weekdays = ["Monday", "Tuesday", "Wednesday"]
         meal_options = list(self.meals.keys())
         chosen_meals = []
         last_category = None
@@ -85,7 +86,6 @@ class PlanDinners:
                 continue
 
         """Create meal schedule and dataframe"""
-        weekdays = ["Monday", "Tuesday", "Wednesday"]
         self.meal_schedule = dict(
             zip(weekdays, chosen_meals))
         meals_dict = {

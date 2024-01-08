@@ -159,7 +159,7 @@ class PlanDinners:
             self,
             "Meals!A:D",
             "USER_ENTERED",
-            """Include column headers"""
+            # Include column headers
             [self.meals_df.columns.values.tolist()] +
             self.meals_df.values.tolist()
         )
@@ -168,7 +168,7 @@ class PlanDinners:
             self,
             "Shopping!A:C",
             "USER_ENTERED",
-            """Include column headers"""
+            # Include column headers
             [self.shopping_df.columns.values.tolist()] +
             self.shopping_df.values.tolist()
         )

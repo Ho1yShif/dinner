@@ -25,6 +25,17 @@ class PlanDinners:
         self.start_of_week = today + datetime.timedelta(days=6-today.weekday())
         self.week_timestamp = self.start_of_week.strftime('%b %d, %Y')
 
+        """Read data from JSON"""
+        with open("dinners.json", "r") as file:
+            dinners_dict = json.load(file)
+            self.meals = {
+                meal["name"]: meal for meal in dinners_dict["meals"]}
+            self.staples = dinners_dict["shared_ingredients"]["staples"]
+            self.fresh_veg = dinners_dict["shared_ingredients"]["fresh_vegetables"]
+            self.frozen_veg = dinners_dict["shared_ingredients"]["frozen_vegetables"]
+            self.toppings = dinners_dict["shared_ingredients"]["toppings"]
+
+    def setup_google_sheets_auth(self):
         """Authenticate with Google Sheets API"""
         self.spreadsheet_id = os.environ.get("SPREADSHEET_ID")
         if not self.spreadsheet_id:
@@ -44,16 +55,6 @@ class PlanDinners:
             ),
             scopes=['https://www.googleapis.com/auth/spreadsheets']
         )
-
-        """Read data from JSON"""
-        with open("dinners.json", "r") as file:
-            dinners_dict = json.load(file)
-            self.meals = {
-                meal["name"]: meal for meal in dinners_dict["meals"]}
-            self.staples = dinners_dict["shared_ingredients"]["staples"]
-            self.fresh_veg = dinners_dict["shared_ingredients"]["fresh_vegetables"]
-            self.frozen_veg = dinners_dict["shared_ingredients"]["frozen_vegetables"]
-            self.toppings = dinners_dict["shared_ingredients"]["toppings"]
 
     def __repr__(self):
         print(self.chosen_meals)
@@ -161,7 +162,8 @@ class PlanDinners:
     def export(self):
         """Schedule meals, create shopping list, and update a Google Sheet with Meals and Shopping sheets"""
 
-        """Pick meals and create shopping list"""
+        """Authenticate Google sheets, choose meals, and create shopping list"""
+        PlanDinners.setup_google_sheets_auth(self)
         PlanDinners.schedule_meals(self)
         PlanDinners.shopping(self)
 

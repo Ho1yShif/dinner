@@ -154,20 +154,21 @@ class PlanDinners:
         PlanDinners.schedule_meals(self)
         PlanDinners.shopping(self)
 
-        """Update Google Sheet with latest meal plan"""
+        """Update Google Sheet with latest meal plan and shopping list"""
         PlanDinners.update_sheet(
             self,
-            "Meals!A:E",
+            "Meals!A:D",
             "USER_ENTERED",
-            # Include column headers
+            """Include column headers"""
             [self.meals_df.columns.values.tolist()] +
             self.meals_df.values.tolist()
         )
+
         PlanDinners.update_sheet(
             self,
             "Shopping!A:C",
             "USER_ENTERED",
-            # Include column headers
+            """Include column headers"""
             [self.shopping_df.columns.values.tolist()] +
             self.shopping_df.values.tolist()
         )

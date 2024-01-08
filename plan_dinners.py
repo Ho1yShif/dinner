@@ -140,6 +140,8 @@ class PlanDinners:
         return self.shopping_df
 
     def update_sheet(self, range_name, value_input_option, values):
+        """Update a Google Sheet with the provided values"""
+
         try:
             service = build("sheets", "v4", credentials=self.credentials)
             body = {"values": values}

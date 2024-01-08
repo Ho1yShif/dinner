@@ -20,16 +20,11 @@ class PlanDinners:
     Exports to Google Sheets for easy viewing
     """
 
-    def __init__(self):
-        today = datetime.date.today()
-        self.start_of_week = today + datetime.timedelta(days=6-today.weekday())
-        self.week_timestamp = self.start_of_week.strftime('%b %d, %Y')
-
-        """Read data from JSON"""
+    def read_dinners_json(self):
+        """Read data from dinners.json"""
         with open("dinners.json", "r") as file:
             dinners_dict = json.load(file)
-            self.meals = {
-                meal["name"]: meal for meal in dinners_dict["meals"]}
+            self.meals = {meal["name"]: meal for meal in dinners_dict["meals"]}
             self.staples = dinners_dict["shared_ingredients"]["staples"]
             self.fresh_veg = dinners_dict["shared_ingredients"]["fresh_vegetables"]
             self.frozen_veg = dinners_dict["shared_ingredients"]["frozen_vegetables"]
@@ -55,6 +50,15 @@ class PlanDinners:
             ),
             scopes=['https://www.googleapis.com/auth/spreadsheets']
         )
+
+    def __init__(self):
+        today = datetime.date.today()
+        self.start_of_week = today + datetime.timedelta(days=6-today.weekday())
+        self.week_timestamp = self.start_of_week.strftime('%b %d, %Y')
+
+        """Authenticate with Google Sheets API and read data from dinners.json"""
+        PlanDinners.setup_google_sheets_auth(self)
+        PlanDinners.read_dinners_json(self)
 
     def __str__(self):
         for day, meal in self.meal_schedule.items():
@@ -162,8 +166,7 @@ class PlanDinners:
     def export(self):
         """Schedule meals, create shopping list, and update a Google Sheet with Meals and Shopping sheets"""
 
-        """Authenticate Google sheets, choose meals, and create shopping list"""
-        PlanDinners.setup_google_sheets_auth(self)
+        """Choose weekly meals and create shopping list"""
         PlanDinners.schedule_meals(self)
         PlanDinners.shopping(self)
 

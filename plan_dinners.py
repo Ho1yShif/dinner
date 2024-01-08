@@ -72,8 +72,9 @@ class PlanDinners:
                 continue
 
         """Create meal schedule and dataframe"""
+        weekdays = ["Monday", "Tuesday", "Wednesday"]
         self.meal_schedule = dict(
-            zip(["Monday", "Tuesday", "Wednesday"], chosen_meals))
+            zip(weekdays, chosen_meals))
         meals_dict = {
             day: [
                 meal.title(),
@@ -82,7 +83,8 @@ class PlanDinners:
             ]
             for day, meal in self.meal_schedule.items()
         }
-        self.meals_df = pd.DataFrame(meals_dict).T
+        self.meals_df = pd.DataFrame(
+            meals_dict, index=weekdays).T
 
         """Display meal schedule"""
         print(f"Menu for the week of {self.week_timestamp}")

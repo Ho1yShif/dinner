@@ -55,21 +55,17 @@ class PlanDinners:
 
     def schedule_meals(self):
         """Build meal schedule for the week along with ingredients and ahead-of-time prep instructions"""
-
         meal_options = list(self.meals.keys())
-        chosen_meals, meal_categories = [], []
+        chosen_meals = []
+        last_category = None
 
         """Randomly select 3 meals for the weekly schedule"""
         while len(chosen_meals) < 3:
             chosen_meal = random.choice(meal_options)
-            category = self.meals[chosen_meal]["category"]
-            """
-            Allow for only one meal per category per week
-            TODO: This can be done more elegantly by bucketing meals into
-            categories, then picking random category buckets and removing the category once used
-            """
-            if category not in meal_categories:
-                meal_categories.append(category)
+            curr_category = self.meals[chosen_meal]["category"]
+            """Ensure that meals from the same category won't be scheduled on consecutive days"""
+            if curr_category != last_category:
+                last_category = curr_category
                 meal_options.remove(chosen_meal)
                 chosen_meals.append(chosen_meal)
             else:
@@ -123,7 +119,6 @@ class PlanDinners:
              "Veggies and Toppings": veggies_toppings,
              "Meal Ingredients": shopping_list}
         )
-
         return self.shopping_df
 
     def update_sheet(self, range_name, value_input_option, values):

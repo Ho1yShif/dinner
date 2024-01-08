@@ -3,6 +3,7 @@ import json
 import random
 import base64
 import datetime
+from typing import Any
 import pandas as pd
 from dotenv import load_dotenv
 from google.oauth2 import service_account
@@ -53,6 +54,12 @@ class PlanDinners:
             self.fresh_veg = dinners_dict["shared_ingredients"]["fresh_vegetables"]
             self.frozen_veg = dinners_dict["shared_ingredients"]["frozen_vegetables"]
             self.toppings = dinners_dict["shared_ingredients"]["toppings"]
+
+    def __repr__(self):
+        return f"PlanDinners()"
+
+    def __str__(self):
+        return f"PlanDinners()"
 
     def schedule_meals(self):
         """Build meal schedule for the week along with ingredients and ahead-of-time prep instructions"""

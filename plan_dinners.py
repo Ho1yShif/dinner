@@ -111,11 +111,6 @@ class PlanDinners:
         self.meals_df.insert(0, f"Menu – Week of {self.week_timestamp}", [
                              "Meal", "Ingredients", "Prep"], True)
 
-        """Display meal schedule"""
-        print(f"Menu for the week of {self.week_timestamp}")
-        for day, meal in self.meal_schedule.items():
-            print(f"{day}: {meal.title()}")
-
         return self.meals_df
 
     def shopping(self):
@@ -176,6 +171,11 @@ class PlanDinners:
         """Choose weekly meals and create shopping list"""
         PlanDinners.schedule_meals(self)
         PlanDinners.shopping(self)
+
+        """Display meal schedule"""
+        print(f"Menu for the week of {self.week_timestamp}")
+        for day, meal in self.meal_schedule.items():
+            print(f"{day}: {meal.title()}")
 
         """Update Google Sheet with latest meal plan and shopping list"""
         PlanDinners.update_sheet(

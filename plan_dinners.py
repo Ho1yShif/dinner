@@ -202,6 +202,8 @@ class PlanDinners:
 
 if __name__ == "__main__":
     dinners = PlanDinners()
-    # dinners.export()
     print("str")
     print(dinners.__str__())
+    print("repr")
+    print(dinners.__repr__())
+    dinners.export()

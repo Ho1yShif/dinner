@@ -52,42 +52,50 @@ class PlanDinners:
         today = datetime.date.today()
         self.start_of_week = today + datetime.timedelta(days=6-today.weekday())
         self.week_timestamp = self.start_of_week.strftime('%b %d, %Y')
+        self.meals_scheduled_flag = False
 
         """Authenticate with Google Sheets API and read data from dinners.json"""
         PlanDinners.setup_google_sheets_auth(self)
         PlanDinners.read_dinners_json(self)
 
     def __str__(self):
-        for day, meal in self.meal_schedule.items():
-            print(f"{day}: {meal.title()}")
-        return f"PlanDinners()"
+        """Return a string representation of the weekly meal plan"""
+
+        """Schedule meals if not already scheduled"""
+        if not self.meals_scheduled_flag:
+            PlanDinners.schedule_meals(self)
+        return '\n'.join(f"{day}: {meal.title()}" for day, meal in self.meal_schedule.items())
 
     def __repr__(self):
-        print(self.chosen_meals)
-        return f"PlanDinners()"
+        if not self.meals_scheduled_flag:
+            PlanDinners.schedule_meals(self)
+
+        """Return a string representation of the PlanDinners object"""
+        return f"PlanDinners(chosen_meals={self.chosen_meals})"
 
     def schedule_meals(self):
         """Build meal schedule for the week along with ingredients and ahead-of-time prep instructions"""
+        self.meals_scheduled_flag = True
         weekdays = ["Monday", "Tuesday", "Wednesday"]
         meal_options = list(self.meals.keys())
-        chosen_meals = []
+        self.chosen_meals = []
         last_category = None
 
         """Randomly select 3 meals for the weekly schedule"""
-        while len(chosen_meals) < 3:
+        while len(self.chosen_meals) < 3:
             chosen_meal = random.choice(meal_options)
             curr_category = self.meals[chosen_meal]["category"]
             """Ensure that meals from the same category won't be scheduled on consecutive days"""
             if curr_category != last_category:
                 last_category = curr_category
                 meal_options.remove(chosen_meal)
-                chosen_meals.append(chosen_meal)
+                self.chosen_meals.append(chosen_meal)
             else:
                 continue
 
         """Create meal schedule and dataframe"""
         self.meal_schedule = dict(
-            zip(weekdays, chosen_meals))
+            zip(weekdays, self.chosen_meals))
         meals_dict = {
             day: [
                 meal.title(),
@@ -194,4 +202,6 @@ class PlanDinners:
 
 if __name__ == "__main__":
     dinners = PlanDinners()
-    dinners.export()
+    # dinners.export()
+    print("str")
+    print(dinners.__str__())

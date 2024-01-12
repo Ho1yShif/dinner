@@ -192,7 +192,7 @@
       "onions"
     ],
     "category": "burgers",
-    "prep": [],
+    "prep": ["caramelized onions"],
     "zack_flag": true
   },
   "grilled cheese with tomato soup": {

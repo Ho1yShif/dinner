@@ -4,14 +4,14 @@
     "ingredients": ["vegan goodles", "pasta", "garlic"],
     "category": "pasta",
     "prep": [],
-    "zack_flag": false
+    "zack_flag": true
   },
   "pasta bolognese": {
     "name": "pasta bolognese",
     "ingredients": ["pasta", "vegan bolognese sauce"],
     "category": "pasta",
     "prep": [],
-    "zack_flag": false
+    "zack_flag": true
   },
   "maple garlic chicken pasta": {
     "name": "maple garlic chicken pasta",
@@ -167,7 +167,7 @@
     ],
     "category": "chicken",
     "prep": ["boiled potatoes"],
-    "zack_flag": false
+    "zack_flag": true
   },
   "baked potatoes": {
     "name": "baked potatoes",
@@ -179,7 +179,7 @@
     ],
     "category": "potatoes",
     "prep": ["boiled potatoes"],
-    "zack_flag": false
+    "zack_flag": true
   },
   "burgers with caramelized onions": {
     "name": "burgers with caramelized onions",
@@ -193,7 +193,7 @@
     ],
     "category": "burgers",
     "prep": [],
-    "zack_flag": false
+    "zack_flag": true
   },
   "grilled cheese with tomato soup": {
     "name": "grilled cheese with tomato soup",
@@ -205,14 +205,14 @@
     ],
     "category": "soup",
     "prep": [],
-    "zack_flag": false
+    "zack_flag": true
   },
   "frozen pizza with salad": {
     "name": "frozen pizza with salad",
     "ingredients": ["daiya frozen pizza", "salad kit"],
     "category": "pizza",
     "prep": [],
-    "zack_flag": false
+    "zack_flag": true
   },
   "pita pizza": {
     "name": "pita pizza",
@@ -220,11 +220,11 @@
       "soft pitas",
       "tomato sauce",
       "lactose free cheese",
-      "mushrooms"
+      "mushrooms optional"
     ],
     "category": "pizza",
     "prep": ["sauteed mushrooms"],
-    "zack_flag": false
+    "zack_flag": true
   },
   "curry with rice": {
     "name": "curry with rice",
@@ -253,14 +253,14 @@
     "ingredients": ["nondairy yogurt", "garlic", "pasta"],
     "category": "pasta",
     "prep": ["garlic"],
-    "zack_flag": false
+    "zack_flag": true
   },
   "pesto pasta": {
     "name": "pesto pasta",
     "ingredients": ["vegan pesto", "garlic", "pasta"],
     "category": "pasta",
     "prep": ["garlic"],
-    "zack_flag": false
+    "zack_flag": true
   },
   "sheet pan gnocchi": {
     "name": "sheet pan gnocchi",

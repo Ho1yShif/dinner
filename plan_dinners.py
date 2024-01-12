@@ -60,17 +60,16 @@ class PlanDinners:
 
     def __str__(self):
         """Return a string representation of the weekly meal plan"""
-
         """Schedule meals if not already scheduled"""
         if not self.meals_scheduled_flag:
             PlanDinners.schedule_meals(self)
         return '\n'.join(f"{day}: {meal.title()}" for day, meal in self.meal_schedule.items())
 
     def __repr__(self):
+        """Return a string representation of the PlanDinners object"""
         if not self.meals_scheduled_flag:
             PlanDinners.schedule_meals(self)
 
-        """Return a string representation of the PlanDinners object"""
         return f"PlanDinners(chosen_meals={self.chosen_meals})"
 
     def schedule_meals(self):

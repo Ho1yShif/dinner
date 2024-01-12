@@ -69,7 +69,6 @@ class PlanDinners:
         """Return a string representation of the PlanDinners object"""
         if not self.meals_scheduled_flag:
             PlanDinners.schedule_meals(self)
-
         return f"PlanDinners(chosen_meals={self.chosen_meals})"
 
     def schedule_meals(self):

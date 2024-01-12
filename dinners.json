@@ -108,10 +108,12 @@
         "tortillas",
         "chipotle peppers in adobo",
         "orange",
+        "soy sauce",
         "cornstarch",
         "ginger",
         "garlic",
         "cabbage",
+        "apple cider vinegar",
         "rice"
       ],
       "category": "taco",
@@ -178,7 +180,7 @@
         "onions"
       ],
       "category": "burgers",
-      "prep": ["caramelized onions"]
+      "prep": []
     },
     {
       "name": "grilled cheese with tomato soup",
@@ -220,7 +222,7 @@
         "coconut milk",
         "cumin",
         "coriander",
-        "tumeric",
+        "turmeric",
         "vegetable broth",
         "lemon",
         "canned crushed tomatoes",

@@ -12,5 +12,5 @@ for meal_name in meals:
     meals[meal_name]["zack_flag"] = False
 
 """Step 3: Write the modified data back to the file"""
-with open("dinners.json", "w") as f:
+with open("new_dinners.json", "w") as f:
     json.dump(meals, f, indent=4)

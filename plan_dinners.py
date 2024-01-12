@@ -46,8 +46,7 @@ class PlanDinners:
         """Read data from JSON"""
         with open("dinners.json", "r") as file:
             dinners_dict = json.load(file)
-            self.meals = {
-                meal["name"]: meal for meal in dinners_dict["meals"]}
+            self.meals = {meal["name"]: meal for meal in dinners_dict["meals"]}
             self.staples = dinners_dict["shared_ingredients"]["staples"]
             self.fresh_veg = dinners_dict["shared_ingredients"]["fresh_vegetables"]
             self.frozen_veg = dinners_dict["shared_ingredients"]["frozen_vegetables"]

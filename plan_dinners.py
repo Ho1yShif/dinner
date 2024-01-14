@@ -55,7 +55,7 @@ class PlanDinners:
         PlanDinners.setup_google_sheets_auth(self)
         PlanDinners.read_dinners_json(self)
 
-    def __str__(self):
+    def __str__(self) -> str:
         """Return a string representation of the weekly meal plan"""
         if not self.meals_scheduled_flag:
             str_info = f"PlanDinners({self.week_timestamp})\nMeals have not been scheduled yet"
@@ -64,6 +64,14 @@ class PlanDinners:
             str_info = f"PlanDinners({self.week_timestamp})\n" + \
                 "\n".join([f"{day}: {meal.title()}" for day, meal in self.meal_schedule.items()])
         return str_info
+
+    def __repr__(self) -> str:
+        """Return a string representation of the PlanDinners object"""
+        if not self.meals_scheduled_flag:
+            repr_info = f"PlanDinners({self.week_timestamp})\nMeals have not been scheduled yet"
+        else:
+            repr_info = f"PlanDinners(chosen_meals={self.chosen_meals})"
+        return repr_info
 
     def schedule_meals(self):
         """Build meal schedule for the week along with ingredients and ahead-of-time prep instructions"""

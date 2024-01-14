@@ -3,8 +3,8 @@
 Meal plan automation repository to streamline meal planning and shopping for the week :)
 
 **Example:**
-![Dinner Menu](https://github.com/Ho1yShif/dinner/assets/75815862/e01fe0a6-1cb8-4f37-b436-84ea816c3b03)
-![Staples](https://github.com/Ho1yShif/dinner/assets/40185666/bc608e33-3374-4526-971f-9aa0c0361621)
+![Dinner Menu](https://github.com/Ho1yShif/dinner/assets/40185666/80c31b7b-1c1a-43aa-809b-a14ac4266d9b)
+![Shopping List](https://github.com/Ho1yShif/dinner/assets/40185666/ee2b08a9-4cec-42fb-af46-30118e8dac54)
 
 ## How to use
 
@@ -20,6 +20,7 @@ Meal plan automation repository to streamline meal planning and shopping for the
 3. Fork this repo
 
    - Customize your meal plan using the `dinners.json` file
+   - Customize the your chefs and responsibilites in the `config.json` file
 
 4. Set repo actions Secrets
    - `SERVICE_ACCOUNT` is the Google service account JSON file encoded in base64

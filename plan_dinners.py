@@ -13,10 +13,7 @@ load_dotenv()
 
 
 class PlanDinners:
-    """
-    Plan 3 weekly dinners along with a shopping list
-    Exports to Google Sheets for easy viewing
-    """
+    """Plan weekly dinners along with a shopping list; export to Google Sheets for easy viewing"""
 
     def __init__(self):
         today = datetime.date.today()

@@ -1,0 +1,12 @@
+{
+  "chefs": ["Zack", "Shif"],
+  "chef_responsibilities": {
+    "Sunday": "",
+    "Monday": "Shif",
+    "Tuesday": "Shif",
+    "Wednesday": "Shif",
+    "Thursday": "Zack",
+    "Friday": "",
+    "Saturday": ""
+  }
+}

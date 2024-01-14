@@ -3,7 +3,7 @@
 Meal plan automation repository to streamline weekly meal planning and shopping
 
 **Screenshots**
-![image](https://github.com/Ho1yShif/dinner/assets/40185666/b2e40616-6ea0-4930-943e-a3a46d165ba1)
+![Dinner Menu](https://github.com/Ho1yShif/dinner/assets/75815862/e01fe0a6-1cb8-4f37-b436-84ea816c3b03)
 ![Staples](https://github.com/Ho1yShif/dinner/assets/40185666/bc608e33-3374-4526-971f-9aa0c0361621)
 
 ## How to use

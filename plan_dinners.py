@@ -25,6 +25,13 @@ class PlanDinners:
             self.frozen_veg = dinners_dict["shared_ingredients"]["frozen_vegetables"]
             self.toppings = dinners_dict["shared_ingredients"]["toppings"]
 
+    def read_config_json(self):
+        """Read data from config.json"""
+        with open("config.json", "r") as file:
+            config_dict = json.load(file)
+            self.chefs = config_dict["chefs"]
+            self.chef_responsibilities = config_dict["chef_responsibilities"]
+
     def setup_google_sheets_auth(self):
         """Authenticate with Google Sheets API"""
         self.spreadsheet_id = os.environ.get("SPREADSHEET_ID")
@@ -52,12 +59,14 @@ class PlanDinners:
 
         PlanDinners.setup_google_sheets_auth(self)
         PlanDinners.read_dinners_json(self)
+        PlanDinners.read_config_json(self)
 
     def __str__(self) -> str:
         """Return a string representation of the weekly meal plan"""
         if self.meal_schedule:
             str_info = f"PlanDinners({self.week_timestamp})\n" + \
-                "\n".join([f"{day}: {meal.title()}" for day, meal in self.meal_schedule.items()])
+                "\n".join([f"{day}: {meal.title()}" for day,
+                          meal in self.meal_schedule.items()])
         else:
             str_info = f"PlanDinners({self.week_timestamp})\nMeals have not been scheduled yet"
         return str_info

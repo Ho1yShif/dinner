@@ -2,34 +2,36 @@ import os
 import json
 import random
 import base64
-import pandas as pd
 import datetime
-from googleapiclient.discovery import build
-from google.oauth2 import service_account
-from googleapiclient.errors import HttpError
+import pandas as pd
 from dotenv import load_dotenv
+from google.oauth2 import service_account
+from googleapiclient.discovery import build
+from googleapiclient.errors import HttpError
 
 load_dotenv()
 
 
 class PlanDinners:
-    """
-    Plan 3 weekly dinners along with a shopping list
-    Exports to Google Sheets for easy viewing
-    """
+    """Plan weekly dinners along with a shopping list; export to Google Sheets for easy viewing"""
 
-    def __init__(self):
-        today = datetime.date.today()
-        self.start_of_week = today + datetime.timedelta(days=6-today.weekday())
-        self.week_timestamp = self.start_of_week.strftime('%b %d, %Y')
+    def read_dinners_json(self):
+        """Read data from dinners.json"""
+        with open("dinners.json", "r") as file:
+            dinners_dict = json.load(file)
+            self.meals = {meal["name"]: meal for meal in dinners_dict["meals"]}
+            self.staples = dinners_dict["shared_ingredients"]["staples"]
+            self.fresh_veg = dinners_dict["shared_ingredients"]["fresh_vegetables"]
+            self.frozen_veg = dinners_dict["shared_ingredients"]["frozen_vegetables"]
+            self.toppings = dinners_dict["shared_ingredients"]["toppings"]
 
+    def setup_google_sheets_auth(self):
         """Authenticate with Google Sheets API"""
         self.spreadsheet_id = os.environ.get("SPREADSHEET_ID")
         if not self.spreadsheet_id:
             raise ValueError(
                 "Please set the SPREADSHEET_ID environment variable to the ID of your Google Sheet."
             )
-
         service_account_info = os.environ.get("SERVICE_ACCOUNT")
         if not service_account_info:
             raise ValueError(
@@ -43,14 +45,30 @@ class PlanDinners:
             scopes=['https://www.googleapis.com/auth/spreadsheets']
         )
 
-        """Read data from JSON"""
-        with open("dinners.json", "r") as file:
-            dinners_dict = json.load(file)
-            self.meals = {meal["name"]: meal for meal in dinners_dict["meals"]}
-            self.staples = dinners_dict["shared_ingredients"]["staples"]
-            self.fresh_veg = dinners_dict["shared_ingredients"]["fresh_vegetables"]
-            self.frozen_veg = dinners_dict["shared_ingredients"]["frozen_vegetables"]
-            self.toppings = dinners_dict["shared_ingredients"]["toppings"]
+    def __init__(self):
+        today = datetime.date.today()
+        self.start_of_week = today + datetime.timedelta(days=6-today.weekday())
+        self.week_timestamp = self.start_of_week.strftime('%b %d, %Y')
+
+        PlanDinners.setup_google_sheets_auth(self)
+        PlanDinners.read_dinners_json(self)
+
+    def __str__(self) -> str:
+        """Return a string representation of the weekly meal plan"""
+        if self.meal_schedule:
+            str_info = f"PlanDinners({self.week_timestamp})\n" + \
+                "\n".join([f"{day}: {meal.title()}" for day, meal in self.meal_schedule.items()])
+        else:
+            str_info = f"PlanDinners({self.week_timestamp})\nMeals have not been scheduled yet"
+        return str_info
+
+    def __repr__(self) -> str:
+        """Return a string representation of the PlanDinners object"""
+        if self.meal_schedule:
+            repr_info = f"PlanDinners(meal_schedule={self.meal_schedule})"
+        else:
+            repr_info = f"PlanDinners({self.week_timestamp})\nMeals have not been scheduled yet"
+        return repr_info
 
     def schedule_meals(self):
         """Build meal schedule for the week along with ingredients and ahead-of-time prep instructions"""

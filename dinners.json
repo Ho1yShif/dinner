@@ -4,13 +4,15 @@
       "name": "goodles",
       "ingredients": ["vegan goodles", "pasta", "garlic"],
       "category": "pasta",
-      "prep": []
+      "prep": [],
+      "zack_flag": true
     },
     {
       "name": "pasta bolognese",
       "ingredients": ["pasta", "vegan bolognese sauce"],
       "category": "pasta",
-      "prep": []
+      "prep": [],
+      "zack_flag": true
     },
     {
       "name": "maple garlic chicken pasta",
@@ -25,7 +27,8 @@
         "fake chicken tenders"
       ],
       "category": "pasta",
-      "prep": ["maple garlic sauce"]
+      "prep": ["maple garlic sauce"],
+      "zack_flag": false
     },
     {
       "name": "miso pasta",
@@ -37,7 +40,8 @@
         "white miso paste"
       ],
       "category": "pasta",
-      "prep": ["miso sauce"]
+      "prep": ["miso sauce"],
+      "zack_flag": false
     },
     {
       "name": "chili garlic noodles",
@@ -51,7 +55,8 @@
         "black vinegar"
       ],
       "category": "pasta",
-      "prep": ["chili garlic sauce"]
+      "prep": ["chili garlic sauce"],
+      "zack_flag": false
     },
     {
       "name": "mac n cheese with thyme breadcrumbs",
@@ -66,7 +71,8 @@
         "fresh thyme"
       ],
       "category": "pasta",
-      "prep": ["cheese sauce"]
+      "prep": ["cheese sauce"],
+      "zack_flag": false
     },
     {
       "name": "maple garlic tofu and rice",
@@ -82,7 +88,8 @@
         "rice"
       ],
       "category": "tofu",
-      "prep": ["maple garlic sauce", "rice"]
+      "prep": ["maple garlic sauce", "rice"],
+      "zack_flag": false
     },
     {
       "name": "gochujang tofu and rice",
@@ -99,7 +106,8 @@
         "rice"
       ],
       "category": "tofu",
-      "prep": ["gochujang sauce", "rice"]
+      "prep": ["gochujang sauce", "rice"],
+      "zack_flag": false
     },
     {
       "name": "orange steak tacos",
@@ -115,7 +123,8 @@
         "rice"
       ],
       "category": "taco",
-      "prep": ["chipotle sauce", "pickled cabbage", "rice"]
+      "prep": ["chipotle sauce", "pickled cabbage", "rice"],
+      "zack_flag": false
     },
     {
       "name": "veggie pancakes with fake chicken",
@@ -127,7 +136,8 @@
         "fake chicken tenders"
       ],
       "category": "chicken",
-      "prep": ["pancake batter"]
+      "prep": ["pancake batter"],
+      "zack_flag": false
     },
     {
       "name": "tomato gnocchi soup with sourdough",
@@ -142,7 +152,8 @@
         "sourdough bread"
       ],
       "category": "soup",
-      "prep": ["soup base"]
+      "prep": ["soup base"],
+      "zack_flag": false
     },
     {
       "name": "chicken with smashed potatoes",
@@ -154,7 +165,8 @@
         "lemon"
       ],
       "category": "chicken",
-      "prep": ["boiled potatoes"]
+      "prep": ["boiled potatoes"],
+      "zack_flag": true
     },
     {
       "name": "baked potatoes",
@@ -165,7 +177,8 @@
         "green onions"
       ],
       "category": "potatoes",
-      "prep": ["boiled potatoes"]
+      "prep": ["boiled potatoes"],
+      "zack_flag": true
     },
     {
       "name": "burgers with caramelized onions",
@@ -178,7 +191,8 @@
         "onions"
       ],
       "category": "burgers",
-      "prep": []
+      "prep": [],
+      "zack_flag": true
     },
     {
       "name": "grilled cheese with tomato soup",
@@ -189,13 +203,15 @@
         "tomatoes"
       ],
       "category": "soup",
-      "prep": []
+      "prep": [],
+      "zack_flag": true
     },
     {
       "name": "frozen pizza with salad",
       "ingredients": ["daiya frozen pizza", "salad kit"],
       "category": "pizza",
-      "prep": []
+      "prep": [],
+      "zack_flag": true
     },
     {
       "name": "pita pizza",
@@ -206,7 +222,8 @@
         "mushrooms"
       ],
       "category": "pizza",
-      "prep": ["sauteed mushrooms"]
+      "prep": ["sauteed mushrooms"],
+      "zack_flag": true
     },
     {
       "name": "curry with rice",
@@ -227,19 +244,22 @@
         "rice"
       ],
       "category": "soup",
-      "prep": ["curry aromatics", "measure spices", "rice"]
+      "prep": ["curry aromatics", "measure spices", "rice"],
+      "zack_flag": false
     },
     {
       "name": "garlic yogurt pasta",
       "ingredients": ["nondairy yogurt", "garlic", "pasta"],
       "category": "pasta",
-      "prep": ["garlic"]
+      "prep": ["garlic"],
+      "zack_flag": true
     },
     {
       "name": "pesto pasta",
       "ingredients": ["vegan pesto", "garlic", "pasta"],
       "category": "pasta",
-      "prep": ["garlic"]
+      "prep": ["garlic"],
+      "zack_flag": true
     },
     {
       "name": "sheet pan gnocchi",
@@ -252,7 +272,8 @@
         "rosemary"
       ],
       "category": "potatoes",
-      "prep": ["onion", "dressing"]
+      "prep": ["onion", "dressing"],
+      "zack_flag": false
     }
   ],
   "shared_ingredients": {

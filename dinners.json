@@ -162,7 +162,7 @@
       "ingredients": [
         "fake chicken tenders",
         "small potatoes",
-        "dill",
+        "fresh dill",
         "nondairy yogurt",
         "lemon"
       ],
@@ -276,6 +276,22 @@
       "categories": ["gnocchi"],
       "prep": ["onion", "dressing"],
       "chef_capabilities": ["Shif"]
+    },
+    {
+      "name": "shakshuka with rice",
+      "ingredients": [
+        "eggs",
+        "crushed tomatoes",
+        "rice",
+        "cumin",
+        "onion",
+        "garlic",
+        "fresh dill",
+        "nondairy yogurt"
+      ],
+      "categories": ["eggs", "rice"],
+      "prep": ["rice"],
+      "chef_capabilities": ["Shif", "Zack"]
     }
   ],
   "shared_ingredients": {

@@ -5,14 +5,14 @@
       "ingredients": ["vegan goodles", "pasta", "garlic"],
       "category": "pasta",
       "prep": [],
-      "zack_flag": false
+      "zack_flag": true
     },
     {
       "name": "pasta bolognese",
       "ingredients": ["pasta", "vegan bolognese sauce"],
       "category": "pasta",
       "prep": [],
-      "zack_flag": false
+      "zack_flag": true
     },
     {
       "name": "maple garlic chicken pasta",
@@ -166,7 +166,7 @@
       ],
       "category": "chicken",
       "prep": ["boiled potatoes"],
-      "zack_flag": false
+      "zack_flag": true
     },
     {
       "name": "baked potatoes",
@@ -178,7 +178,7 @@
       ],
       "category": "potatoes",
       "prep": ["boiled potatoes"],
-      "zack_flag": false
+      "zack_flag": true
     },
     {
       "name": "burgers with caramelized onions",
@@ -192,7 +192,7 @@
       ],
       "category": "burgers",
       "prep": [],
-      "zack_flag": false
+      "zack_flag": true
     },
     {
       "name": "grilled cheese with tomato soup",
@@ -204,14 +204,14 @@
       ],
       "category": "soup",
       "prep": [],
-      "zack_flag": false
+      "zack_flag": true
     },
     {
       "name": "frozen pizza with salad",
       "ingredients": ["daiya frozen pizza", "salad kit"],
       "category": "pizza",
       "prep": [],
-      "zack_flag": false
+      "zack_flag": true
     },
     {
       "name": "pita pizza",
@@ -223,7 +223,7 @@
       ],
       "category": "pizza",
       "prep": ["sauteed mushrooms"],
-      "zack_flag": false
+      "zack_flag": true
     },
     {
       "name": "curry with rice",
@@ -252,14 +252,14 @@
       "ingredients": ["nondairy yogurt", "garlic", "pasta"],
       "category": "pasta",
       "prep": ["garlic"],
-      "zack_flag": false
+      "zack_flag": true
     },
     {
       "name": "pesto pasta",
       "ingredients": ["vegan pesto", "garlic", "pasta"],
       "category": "pasta",
       "prep": ["garlic"],
-      "zack_flag": false
+      "zack_flag": true
     },
     {
       "name": "sheet pan gnocchi",

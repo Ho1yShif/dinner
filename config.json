@@ -1,12 +1,12 @@
 {
   "chefs": ["Zack", "Shif"],
   "chef_responsibilities": {
-    "Sunday": "*",
+    "Sunday": "",
     "Monday": "Shif",
     "Tuesday": "Shif",
     "Wednesday": "Shif",
     "Thursday": "Zack",
-    "Friday": "*",
-    "Saturday": "*"
+    "Friday": "",
+    "Saturday": ""
   }
 }

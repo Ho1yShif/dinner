@@ -275,5 +275,58 @@
     "category": "potatoes",
     "prep": ["onion", "dressing"],
     "zack_flag": false
+  },
+  "shared_ingredients": {
+    "staples": [
+      "artisan bread",
+      "garlic",
+      "olive oil",
+      "neutral oil",
+      "salt",
+      "pepper",
+      "vegan butter",
+      "eggs",
+      "mayonnaise",
+      "vegetable broth",
+      "vegan parmesan",
+      "lactose-free cheese",
+      "chia seeds"
+    ],
+    "fresh_vegetables": [
+      "spinach",
+      "carrots",
+      "asparagus",
+      "orange/yellow peppers",
+      "cabbage",
+      "zucchini",
+      "squash",
+      "cucumber",
+      "snap peas",
+      "brussels sprouts"
+    ],
+    "frozen_vegetables": [
+      "broccoli",
+      "cauliflower",
+      "peas",
+      "green beans",
+      "mixed vegetables"
+    ],
+    "toppings": [
+      "hemp seeds",
+      "pumpkin seeds",
+      "walnuts",
+      "sliced almonds",
+      "seeds and nuts mix",
+      "cottage cheese",
+      "almond butter",
+      "hummus",
+      "avocado",
+      "strawberries",
+      "bananas",
+      "blueberries",
+      "raspberries",
+      "blackberries",
+      "peaches"
+    ]
   }
 }

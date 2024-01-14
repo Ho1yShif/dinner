@@ -51,7 +51,6 @@ class PlanDinners:
         self.week_timestamp = self.start_of_week.strftime('%b %d, %Y')
         self.meals_scheduled_flag = False
 
-        """Authenticate with Google Sheets API and read data from dinners.json"""
         PlanDinners.setup_google_sheets_auth(self)
         PlanDinners.read_dinners_json(self)
 

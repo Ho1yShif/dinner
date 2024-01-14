@@ -3,14 +3,14 @@
     {
       "name": "goodles",
       "ingredients": ["vegan goodles", "pasta", "garlic"],
-      "category": "pasta",
+      "category": ["pasta"],
       "prep": [],
       "chef_capabilities": ["Shif", "Zack"]
     },
     {
       "name": "pasta bolognese",
       "ingredients": ["pasta", "vegan bolognese sauce"],
-      "category": "pasta",
+      "category": ["pasta"],
       "prep": [],
       "chef_capabilities": ["Shif", "Zack"]
     },
@@ -26,7 +26,7 @@
         "apple cider vinegar",
         "fake chicken tenders"
       ],
-      "category": "pasta",
+      "category": ["pasta"],
       "prep": ["maple garlic sauce"],
       "chef_capabilities": ["Shif"]
     },
@@ -39,7 +39,7 @@
         "apple cider vinegar",
         "white miso paste"
       ],
-      "category": "pasta",
+      "category": ["pasta"],
       "prep": ["miso sauce"],
       "chef_capabilities": ["Shif"]
     },
@@ -54,7 +54,7 @@
         "red pepper flakes",
         "black vinegar"
       ],
-      "category": "pasta",
+      "category": ["pasta"],
       "prep": ["chili garlic sauce"],
       "chef_capabilities": ["Shif"]
     },
@@ -70,7 +70,7 @@
         "tomatoes",
         "fresh thyme"
       ],
-      "category": "pasta",
+      "category": ["pasta"],
       "prep": ["cheese sauce"],
       "chef_capabilities": ["Shif"]
     },
@@ -87,7 +87,7 @@
         "fake chicken tenders",
         "rice"
       ],
-      "category": "tofu",
+      "category": ["tofu"],
       "prep": ["maple garlic sauce", "rice"],
       "chef_capabilities": ["Shif"]
     },
@@ -105,7 +105,7 @@
         "fake chicken tenders",
         "rice"
       ],
-      "category": "tofu",
+      "category": ["tofu"],
       "prep": ["gochujang sauce", "rice"],
       "chef_capabilities": ["Shif"]
     },
@@ -124,7 +124,7 @@
         "cabbage",
         "rice"
       ],
-      "category": "taco",
+      "category": ["taco"],
       "prep": ["chipotle sauce", "pickled cabbage", "rice"],
       "chef_capabilities": ["Shif"]
     },
@@ -137,7 +137,7 @@
         "cornstarch",
         "fake chicken tenders"
       ],
-      "category": "chicken",
+      "category": ["chicken"],
       "prep": ["pancake batter"],
       "chef_capabilities": ["Shif"]
     },
@@ -153,7 +153,7 @@
         "lemon",
         "sourdough bread"
       ],
-      "category": "soup",
+      "category": ["soup"],
       "prep": ["soup base"],
       "chef_capabilities": ["Shif"]
     },
@@ -166,7 +166,7 @@
         "nondairy yogurt",
         "lemon"
       ],
-      "category": "chicken",
+      "category": ["chicken"],
       "prep": ["boiled potatoes"],
       "chef_capabilities": ["Shif", "Zack"]
     },
@@ -178,7 +178,7 @@
         "beyond beef",
         "green onions"
       ],
-      "category": "potatoes",
+      "category": ["potatoes"],
       "prep": ["boiled potatoes"],
       "chef_capabilities": ["Shif", "Zack"]
     },
@@ -192,7 +192,7 @@
         "lettuce",
         "onions"
       ],
-      "category": "burgers",
+      "category": ["burgers"],
       "prep": [],
       "chef_capabilities": ["Shif", "Zack"]
     },
@@ -204,14 +204,14 @@
         "lactose free cheese",
         "tomatoes"
       ],
-      "category": "soup",
+      "category": ["soup"],
       "prep": [],
       "chef_capabilities": ["Shif", "Zack"]
     },
     {
       "name": "frozen pizza with salad",
       "ingredients": ["daiya frozen pizza", "salad kit"],
-      "category": "pizza",
+      "category": ["pizza"],
       "prep": [],
       "chef_capabilities": ["Shif", "Zack"]
     },
@@ -223,7 +223,7 @@
         "lactose free cheese",
         "mushrooms"
       ],
-      "category": "pizza",
+      "category": ["pizza"],
       "prep": ["sauteed mushrooms"],
       "chef_capabilities": ["Shif", "Zack"]
     },
@@ -245,21 +245,21 @@
         "canned crushed tomatoes",
         "rice"
       ],
-      "category": "soup",
+      "category": ["soup"],
       "prep": ["curry aromatics", "measure spices", "rice"],
       "chef_capabilities": ["Shif"]
     },
     {
       "name": "garlic yogurt pasta",
       "ingredients": ["nondairy yogurt", "garlic", "pasta"],
-      "category": "pasta",
+      "category": ["pasta"],
       "prep": ["garlic"],
       "chef_capabilities": ["Shif", "Zack"]
     },
     {
       "name": "pesto pasta",
       "ingredients": ["vegan pesto", "garlic", "pasta"],
-      "category": "pasta",
+      "category": ["pasta"],
       "prep": ["garlic"],
       "chef_capabilities": ["Shif", "Zack"]
     },
@@ -273,7 +273,7 @@
         "onion",
         "rosemary"
       ],
-      "category": "potatoes",
+      "category": ["potatoes"],
       "prep": ["onion", "dressing"],
       "chef_capabilities": ["Shif"]
     }

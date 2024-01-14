@@ -81,35 +81,58 @@ class PlanDinners:
 
     def schedule_meals(self):
         """Build meal schedule for the week along with ingredients and ahead-of-time prep instructions"""
-        meal_options = list(self.meals.keys())
-        chosen_meals = []
-        last_category = None
+        chef_meals = {chef: [] for chef in self.chefs}
+        for meal_name in list(self.meals.keys()):
+            meal = self.meals[meal_name]
+            for idx, chef in enumerate(meal["chef_capabilities"]):
+                chef_meals[chef].append(meal_name)
 
-        """Randomly select 3 meals for the weekly schedule"""
-        while len(chosen_meals) < 3:
-            chosen_meal = random.choice(meal_options)
-            curr_category = self.meals[chosen_meal]["category"]
-            """Ensure that meals from the same category won't be scheduled on consecutive days"""
-            if curr_category != last_category:
-                last_category = curr_category
-                meal_options.remove(chosen_meal)
-                chosen_meals.append(chosen_meal)
-            else:
+        chosen_meal_names = []
+        last_categories = []
+
+        for day, chef in self.chef_responsibilities.items():
+            """Skip if no chef is assigned to a given day"""
+            if chef == "":
+                chosen_meal_names.append("")
                 continue
+
+            """Randomly select a meal from the chef's list of capabilities"""
+            chosen_meal_name = random.choice(chef_meals[chef])
+            curr_categories = self.meals[chosen_meal_name]["categories"]
+
+            """
+            Ensure that meals with shared categories are not scheduled on consecutive days
+            and that no meal is scheduled more than once
+
+            Pick a new meal if the current choice is invalid
+            """
+            while any(category in last_categories for category in curr_categories) or chosen_meal_name in chosen_meal_names:
+                chosen_meal_name = random.choice(chef_meals[chef])
+                curr_categories = self.meals[chosen_meal_name]["categories"]
+
+            chosen_meal_names.append(chosen_meal_name)
+            last_categories = curr_categories
 
         """Create meal schedule and dataframe"""
         self.meal_schedule = dict(
-            zip(["Monday", "Tuesday", "Wednesday"], chosen_meals))
-        meals_dict = {
-            day: [
-                meal.title(),
-                ", ".join(self.meals[meal]["ingredients"]),
-                ", ".join(self.meals[meal]["prep"])
+            zip(list(self.chef_responsibilities.keys()), chosen_meal_names))
+
+        meals_dict = {}
+        for day, meal_name in self.meal_schedule.items():
+            if meal_name == "":
+                meals_dict[day] = ["Unplanned", "Group",
+                                   "Whatever is available", "N/A"]
+                continue
+            meals_dict[day] = [
+                meal_name.title(),
+                "Chef " + self.chef_responsibilities[day],
+                ", ".join(self.meals[meal_name]["ingredients"]),
+                ", ".join(self.meals[meal_name]["prep"])
             ]
-            for day, meal in self.meal_schedule.items()
-        }
+
         self.meals_df = pd.DataFrame(
-            meals_dict, index=["Meal", "Ingredients", "Prep"])
+            meals_dict, index=["Meal", "Chef", "Ingredients", "Prep"]
+        )
 
         """Display meal schedule"""
         print(self.__str__())
@@ -127,8 +150,24 @@ class PlanDinners:
         veggies_toppings.sort()
 
         """Create shopping list for meal ingredients"""
-        shopping_list = list({item for meal in self.meal_schedule.values()
-                              for item in self.meals[meal]["ingredients"]})
+        shopping_dict = {}
+        for day, meal_name in self.meal_schedule.items():
+            if meal_name == "":
+                continue
+            meal = self.meals[meal_name]
+            for idx, ingredient in enumerate(meal["ingredients"]):
+                if ingredient in self.staples:
+                    continue
+                shopping_dict[ingredient] = shopping_dict.get(
+                    ingredient, 0) + 1
+
+        """Create shopping list with 'item (COUNT meals)' format"""
+        shopping_list = []
+        for ingredient, count in shopping_dict.items():
+            if count > 1:
+                shopping_list.append(f"{ingredient} ({count} meals)")
+            else:
+                shopping_list.append(ingredient)
         shopping_list.sort()
 
         """Pad lists to make them all the same length for a uniform dataframe"""
@@ -175,12 +214,12 @@ class PlanDinners:
 
         """Insert row headers headers and timestamp"""
         self.meals_df.insert(0, f"Menu – Week of {self.week_timestamp}", [
-                             "Meal", "Ingredients", "Prep"], True)
+                             "Meal", "Chef", "Ingredients", "Prep"], True)
 
         """Update Google Sheet with latest meal plan"""
         PlanDinners.update_sheet(
             self,
-            "Meals!A:E",
+            "Meals!A:H",
             "USER_ENTERED",
             # Include column headers
             [self.meals_df.columns.values.tolist()] +

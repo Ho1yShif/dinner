@@ -20,7 +20,8 @@ Meal plan automation repository to streamline meal planning and shopping for the
 3. Fork this repo
 
    - Customize your meal plan using the `dinners.json` file
-   - Customize the your chefs and responsibilites in the `config.json` file
+   - Customize your chefs and responsibilites in the `config.json` file
+       - Empty responsibility days will be listed as Unplanned group days in the menu
 
 4. Set repo actions Secrets
    - `SERVICE_ACCOUNT` is the Google service account JSON file encoded in base64

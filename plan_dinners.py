@@ -112,9 +112,7 @@ class PlanDinners:
             meals_dict, index=["Meal", "Ingredients", "Prep"])
 
         """Display meal schedule"""
-        print(f"Menu for the week of {self.week_timestamp}")
-        for day, meal in self.meal_schedule.items():
-            print(f"{day}: {meal.title()}")
+        print(self.__str__())
 
         return self.meals_df
 

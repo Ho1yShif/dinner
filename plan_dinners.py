@@ -49,32 +49,29 @@ class PlanDinners:
         today = datetime.date.today()
         self.start_of_week = today + datetime.timedelta(days=6-today.weekday())
         self.week_timestamp = self.start_of_week.strftime('%b %d, %Y')
-        self.meals_scheduled_flag = False
 
         PlanDinners.setup_google_sheets_auth(self)
         PlanDinners.read_dinners_json(self)
 
     def __str__(self) -> str:
         """Return a string representation of the weekly meal plan"""
-        if not self.meals_scheduled_flag:
-            str_info = f"PlanDinners({self.week_timestamp})\nMeals have not been scheduled yet"
-            return str_info
-        else:
+        if self.meal_schedule:
             str_info = f"PlanDinners({self.week_timestamp})\n" + \
                 "\n".join([f"{day}: {meal.title()}" for day, meal in self.meal_schedule.items()])
+        else:
+            str_info = f"PlanDinners({self.week_timestamp})\nMeals have not been scheduled yet"
         return str_info
 
     def __repr__(self) -> str:
         """Return a string representation of the PlanDinners object"""
-        if not self.meals_scheduled_flag:
-            repr_info = f"PlanDinners({self.week_timestamp})\nMeals have not been scheduled yet"
+        if self.meal_schedule:
+            repr_info = f"PlanDinners(meal_schedule={self.meal_schedule})"
         else:
-            repr_info = f"PlanDinners(chosen_meals={self.chosen_meals})"
+            repr_info = f"PlanDinners({self.week_timestamp})\nMeals have not been scheduled yet"
         return repr_info
 
     def schedule_meals(self):
         """Build meal schedule for the week along with ingredients and ahead-of-time prep instructions"""
-        self.meals_scheduled_flag = True
         meal_options = list(self.meals.keys())
         chosen_meals = []
         last_category = None

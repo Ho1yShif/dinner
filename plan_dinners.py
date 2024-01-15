@@ -216,6 +216,12 @@ class PlanDinners:
         self.meals_df.insert(0, f"Menu – Week of {self.week_timestamp}", [
                              "Meal", "Chef", "Ingredients", "Prep"], True)
 
+        """Clear Shopping sheet before refilling with new data"""
+        service = build("sheets", "v4", credentials=self.credentials)
+        service.spreadsheets().values().clear(
+            spreadsheetId=self.spreadsheet_id, range="Shopping", body={}
+        ).execute()
+
         """Update Google Sheet with latest meal plan"""
         PlanDinners.update_sheet(
             self,

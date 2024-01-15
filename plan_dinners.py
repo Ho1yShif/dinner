@@ -184,6 +184,17 @@ class PlanDinners:
         )
         return self.shopping_df
 
+    def clear_sheet(self, range_name:str):
+        """Clear Shopping sheet before refilling with new data"""
+        try:
+            service = build("sheets", "v4", credentials=self.credentials)
+            service.spreadsheets().values().clear(
+                spreadsheetId=self.spreadsheet_id, range="range_name", body={}
+            ).execute()
+        except HttpError as error:
+            print(f"An error occurred: {error}")
+            return error
+
     def update_sheet(self, range_name, value_input_option, values):
         try:
             service = build("sheets", "v4", credentials=self.credentials)
@@ -215,12 +226,6 @@ class PlanDinners:
         """Insert row headers headers and timestamp"""
         self.meals_df.insert(0, f"Menu – Week of {self.week_timestamp}", [
                              "Meal", "Chef", "Ingredients", "Prep"], True)
-
-        """Clear Shopping sheet before refilling with new data"""
-        service = build("sheets", "v4", credentials=self.credentials)
-        service.spreadsheets().values().clear(
-            spreadsheetId=self.spreadsheet_id, range="Shopping", body={}
-        ).execute()
 
         """Update Google Sheet with latest meal plan"""
         PlanDinners.update_sheet(

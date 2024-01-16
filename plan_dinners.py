@@ -49,13 +49,13 @@ class PlanDinners:
                 # The JSON string is B64-encoded to avoid control chars causing issues in the pipeline
                 base64.b64decode(service_account_info.encode("ascii"))
             ),
-            scopes=['https://www.googleapis.com/auth/spreadsheets']
+            scopes=["https://www.googleapis.com/auth/spreadsheets"]
         )
 
     def __init__(self):
         today = datetime.date.today()
         self.start_of_week = today + datetime.timedelta(days=6-today.weekday())
-        self.week_timestamp = self.start_of_week.strftime('%b %d, %Y')
+        self.week_timestamp = self.start_of_week.strftime("%b %d, %Y")
 
         PlanDinners.setup_google_sheets_auth(self)
         PlanDinners.read_dinners_json(self)
@@ -174,7 +174,7 @@ class PlanDinners:
         lists = [self.staples, shopping_list, veggies_toppings]
         max_len = max(len(lst) for lst in lists)
         for idx, lst in enumerate(lists):
-            lists[idx] += [''] * (max_len - len(lst))
+            lists[idx] += [""] * (max_len - len(lst))
 
         """Create dataframe where each ingredient has its own line"""
         self.shopping_df = pd.DataFrame(

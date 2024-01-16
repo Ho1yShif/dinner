@@ -49,13 +49,13 @@ class PlanDinners:
                 # The JSON string is B64-encoded to avoid control chars causing issues in the pipeline
                 base64.b64decode(service_account_info.encode("ascii"))
             ),
-            scopes=['https://www.googleapis.com/auth/spreadsheets']
+            scopes=["https://www.googleapis.com/auth/spreadsheets"]
         )
 
     def __init__(self):
         today = datetime.date.today()
         self.start_of_week = today + datetime.timedelta(days=6-today.weekday())
-        self.week_timestamp = self.start_of_week.strftime('%b %d, %Y')
+        self.week_timestamp = self.start_of_week.strftime("%b %d, %Y")
 
         PlanDinners.setup_google_sheets_auth(self)
         PlanDinners.read_dinners_json(self)
@@ -174,7 +174,7 @@ class PlanDinners:
         lists = [self.staples, shopping_list, veggies_toppings]
         max_len = max(len(lst) for lst in lists)
         for idx, lst in enumerate(lists):
-            lists[idx] += [''] * (max_len - len(lst))
+            lists[idx] += [""] * (max_len - len(lst))
 
         """Create dataframe where each ingredient has its own line"""
         self.shopping_df = pd.DataFrame(
@@ -183,6 +183,21 @@ class PlanDinners:
              "Meal Ingredients": shopping_list}
         )
         return self.shopping_df
+
+    def clear_sheet(self, range_name:str):
+        """Clear Shopping sheet before refilling with new data"""
+        try:
+            service = build("sheets", "v4", credentials=self.credentials)
+            result = service.spreadsheets().values().clear(
+                spreadsheetId=self.spreadsheet_id,
+                range=range_name,
+                body={}
+            ).execute()
+            print(f"{range_name} spreadsheet cleared")
+            return result
+        except HttpError as error:
+            print(f"An error occurred: {error}")
+            return error
 
     def update_sheet(self, range_name, value_input_option, values):
         try:
@@ -199,7 +214,7 @@ class PlanDinners:
                 )
                 .execute()
             )
-            print(f"{result.get('updatedCells')} cells updated.")
+            print(f"{result.get('updatedCells')} cells updated")
             return result
         except HttpError as error:
             print(f"An error occurred: {error}")
@@ -213,8 +228,11 @@ class PlanDinners:
         PlanDinners.shopping(self)
 
         """Insert row headers headers and timestamp"""
-        self.meals_df.insert(0, f"Menu – Week of {self.week_timestamp}", [
-                             "Meal", "Chef", "Ingredients", "Prep"], True)
+        self.meals_df.insert(0, f"Menu – Week of {self.week_timestamp}",
+                             ["Meal", "Chef", "Ingredients", "Prep"], True)
+
+        """Clear sheet before updating"""
+        PlanDinners.clear_sheet(self, "Shopping")
 
         """Update Google Sheet with latest meal plan"""
         PlanDinners.update_sheet(

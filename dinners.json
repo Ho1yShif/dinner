@@ -292,6 +292,20 @@
       "categories": ["eggs", "rice"],
       "prep": ["rice"],
       "chef_capabilities": ["Shif", "Zack"]
+    },
+    {
+      "name": "quesadilla",
+      "ingredients": [
+        "tortillas",
+        "beyond beef",
+        "lactose free cheese",
+        "lactose free sour cream",
+        "onion",
+        "salsa"
+      ],
+      "categories": ["tacos"],
+      "prep": [],
+      "chef_capabilities": ["Shif"]
     }
   ],
   "shared_ingredients": {

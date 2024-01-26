@@ -2,8 +2,8 @@ name: Meal Plan Updater
 on:
   workflow_dispatch: # Manually run workflow when desired
   schedule:
-    # Run every Saturday at 3am
-    - cron: '0 3 * * 6'
+    # Run every Friday at noon
+    - cron: '0 12 * * 5'
 
 jobs:
   Update-Meal-Plan:

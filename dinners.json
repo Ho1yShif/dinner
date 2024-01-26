@@ -163,7 +163,7 @@
         "fake chicken tenders",
         "small potatoes",
         "fresh dill",
-        "nondairy yogurt",
+        "lactose free yogurt",
         "lemon"
       ],
       "categories": ["chicken"],
@@ -251,7 +251,7 @@
     },
     {
       "name": "garlic yogurt pasta",
-      "ingredients": ["nondairy yogurt", "garlic", "pasta"],
+      "ingredients": ["lactose free yogurt", "garlic", "pasta"],
       "categories": ["pasta"],
       "prep": ["garlic"],
       "chef_capabilities": ["Shif", "Zack"]
@@ -267,7 +267,7 @@
       "name": "sheet pan gnocchi",
       "ingredients": [
         "vegan pesto",
-        "nondairy yogurt",
+        "lactose free yogurt",
         "lemon",
         "gnocchi",
         "onion",
@@ -287,11 +287,25 @@
         "onion",
         "garlic",
         "fresh dill",
-        "nondairy yogurt"
+        "lactose free yogurt"
       ],
       "categories": ["eggs", "rice"],
       "prep": ["rice"],
       "chef_capabilities": ["Shif", "Zack"]
+    },
+    {
+      "name": "quesadilla",
+      "ingredients": [
+        "tortillas",
+        "beyond beef",
+        "lactose free cheese",
+        "lactose free sour cream",
+        "onion",
+        "salsa"
+      ],
+      "categories": ["tacos"],
+      "prep": [],
+      "chef_capabilities": ["Shif"]
     }
   ],
   "shared_ingredients": {
@@ -308,7 +322,8 @@
       "vegetable broth",
       "vegan parmesan",
       "lactose-free cheese",
-      "chia seeds"
+      "chia seeds",
+      "chocolate chips"
     ],
     "fresh_vegetables": [
       "spinach",

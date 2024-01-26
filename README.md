@@ -29,7 +29,7 @@ Meal plan automation repository to streamline meal planning and shopping for the
 
 ## How it works
 
-A GitHub Action is scheduled to run the `plan_dinners.py` script weekly at 3 AM on Saturday. This script will read the `dinners.json` file and randomly select meals for each day of the week.
+A GitHub Action is scheduled to run the `plan_dinners.py` script weekly at noon on Friday. This script will read the `dinners.json` file and randomly select meals for each day of the week.
 
 Each meal category is represented non-consecutively throughout the week, meaning that the same meal category won't be used two days in a row.
 

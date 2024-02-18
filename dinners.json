@@ -306,6 +306,13 @@
       "categories": ["tacos"],
       "prep": [],
       "chef_capabilities": ["Shif"]
+    },
+    {
+      "name": "caramelized onion pasta",
+      "ingredients": ["pasta", "onion", "garlic", "gochujang"],
+      "categories": ["pasta"],
+      "prep": ["caramelized onions"],
+      "chef_capabilities": ["Shif", "Zack"]
     }
   ],
   "shared_ingredients": {

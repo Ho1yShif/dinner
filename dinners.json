@@ -317,7 +317,6 @@
   ],
   "shared_ingredients": {
     "staples": [
-      "artisan bread",
       "garlic",
       "olive oil",
       "neutral oil",
@@ -327,7 +326,8 @@
       "eggs",
       "lactose-free cheese",
       "chia seeds",
-      "chocolate chips"
+      "chocolate chips",
+      "pasta"
     ],
     "fresh_vegetables": [
       "spinach",

@@ -129,19 +129,6 @@
       "chef_capabilities": ["Shif"]
     },
     {
-      "name": "veggie pancakes with fake chicken",
-      "ingredients": [
-        "prepared cabbage slaw",
-        "garlic",
-        "flour",
-        "cornstarch",
-        "fake chicken tenders"
-      ],
-      "categories": ["chicken"],
-      "prep": ["pancake batter"],
-      "chef_capabilities": ["Shif"]
-    },
-    {
       "name": "tomato gnocchi soup with sourdough",
       "ingredients": [
         "tomato puree",

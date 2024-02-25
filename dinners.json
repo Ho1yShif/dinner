@@ -84,7 +84,6 @@
         "ginger",
         "garlic",
         "apple cider vinegar",
-        "fake chicken tenders",
         "rice"
       ],
       "categories": ["tofu"],
@@ -126,19 +125,6 @@
       ],
       "categories": ["beef", "tacos"],
       "prep": ["chipotle sauce", "pickled cabbage", "rice"],
-      "chef_capabilities": ["Shif"]
-    },
-    {
-      "name": "veggie pancakes with fake chicken",
-      "ingredients": [
-        "prepared cabbage slaw",
-        "garlic",
-        "flour",
-        "cornstarch",
-        "fake chicken tenders"
-      ],
-      "categories": ["chicken"],
-      "prep": ["pancake batter"],
       "chef_capabilities": ["Shif"]
     },
     {

@@ -299,6 +299,21 @@
       "categories": ["pasta"],
       "prep": ["caramelized onions"],
       "chef_capabilities": ["Shif", "Zack"]
+    },
+    {
+      "name": "rose teokbokki",
+      "ingredients": [
+        "teokbokki",
+        "garlic",
+        "gochujang",
+        "gochugaru",
+        "milk",
+        "lactose free cheese",
+        "green onions"
+      ],
+      "categories": ["teokbokki"],
+      "prep": ["garlic", "green onions"],
+      "chef_capabilities": ["Shif"]
     }
   ],
   "shared_ingredients": {

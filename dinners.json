@@ -15,6 +15,13 @@
       "chef_capabilities": ["Shif", "Zack"]
     },
     {
+      "name": "pasta sauce and cheese",
+      "ingredients": ["pasta", "vegan cheese", "raos pasta sauce"],
+      "categories": ["pasta"],
+      "prep": [],
+      "chef_capabilities": ["Shif", "Zack"]
+    },
+    {
       "name": "maple garlic chicken pasta",
       "ingredients": [
         "pasta",

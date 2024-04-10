@@ -313,6 +313,18 @@
       "categories": ["teokbokki"],
       "prep": ["garlic", "green onions"],
       "chef_capabilities": ["Shif"]
+    },
+    {
+      "name": "pizza",
+      "ingredients": [
+        "pizza dough",
+        "tomato sauce",
+        "lactose free cheese",
+        "fresh basil"
+      ],
+      "categories": ["pizza"],
+      "prep": ["pre-bake pizza dough"],
+      "chef_capabilities": ["Shif", "Zack"]
     }
   ],
   "shared_ingredients": {

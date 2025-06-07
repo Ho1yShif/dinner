@@ -1,15 +1,8 @@
 {
   "meals": [
     {
-      "name": "goodles",
-      "ingredients": ["vegan goodles", "pasta", "garlic"],
-      "categories": ["pasta"],
-      "prep": [],
-      "chef_capabilities": ["Shif", "Zack"]
-    },
-    {
-      "name": "pasta bolognese",
-      "ingredients": ["pasta", "vegan bolognese sauce"],
+      "name": "peanut butter noodles",
+      "ingredients": ["udon noodles", "peanut butter", "green onions", "garlic"],
       "categories": ["pasta"],
       "prep": [],
       "chef_capabilities": ["Shif", "Zack"]
@@ -26,7 +19,6 @@
       "ingredients": [
         "pasta",
         "maple syrup",
-        "soy sauce",
         "cornstarch",
         "garlic",
         "ginger",
@@ -38,24 +30,22 @@
       "chef_capabilities": ["Shif"]
     },
     {
-      "name": "miso pasta",
+      "name": "tofu pasta",
       "ingredients": [
         "pasta",
-        "ginger",
-        "cornstarch",
-        "apple cider vinegar",
-        "white miso paste"
+        "silken tofu",
+        "cashews",
+        "miso paste",
+        "nutritional yeast"
       ],
       "categories": ["pasta"],
-      "prep": ["miso sauce"],
+      "prep": ["sauce"],
       "chef_capabilities": ["Shif"]
     },
     {
       "name": "chili garlic noodles",
       "ingredients": [
         "thick noodles",
-        "dark soy sauce",
-        "soy sauce",
         "garlic",
         "edamame",
         "red pepper flakes",
@@ -66,27 +56,10 @@
       "chef_capabilities": ["Shif"]
     },
     {
-      "name": "mac n cheese with thyme breadcrumbs",
-      "ingredients": [
-        "lactose free cheese",
-        "whole grain mustard",
-        "pasta",
-        "milk",
-        "lactose free butter",
-        "breadcrumbs",
-        "tomatoes",
-        "fresh thyme"
-      ],
-      "categories": ["pasta"],
-      "prep": ["cheese sauce"],
-      "chef_capabilities": ["Shif"]
-    },
-    {
       "name": "maple garlic tofu and rice",
       "ingredients": [
         "high protein tofu",
         "maple syrup",
-        "soy sauce",
         "cornstarch",
         "ginger",
         "garlic",
@@ -102,7 +75,6 @@
       "ingredients": [
         "high protein tofu",
         "maple syrup",
-        "soy sauce",
         "gochujang",
         "cornstarch",
         "ginger",
@@ -123,7 +95,6 @@
         "chipotle peppers in adobo",
         "orange",
         "apple cider vinegar",
-        "soy sauce",
         "cornstarch",
         "ginger",
         "garlic",
@@ -156,7 +127,7 @@
         "fake chicken tenders",
         "small potatoes",
         "fresh dill",
-        "lactose free yogurt",
+        "dairy free yogurt",
         "lemon"
       ],
       "categories": ["chicken"],
@@ -167,7 +138,7 @@
       "name": "baked potatoes",
       "ingredients": [
         "large russet potatoes",
-        "lactose free cheese",
+        "dairy free cheese",
         "beyond beef",
         "green onions"
       ],
@@ -179,7 +150,7 @@
       "name": "burgers with caramelized onions",
       "ingredients": [
         "beyond burgers",
-        "lactose free cheese",
+        "dairy free cheese",
         "burger buns",
         "whole grain mustard",
         "lettuce",
@@ -194,7 +165,7 @@
       "ingredients": [
         "ready-made tomato soup",
         "sourdough bread",
-        "lactose free cheese",
+        "dairy free cheese",
         "tomatoes"
       ],
       "categories": ["soup"],
@@ -213,7 +184,7 @@
       "ingredients": [
         "soft pitas",
         "tomato sauce",
-        "lactose free cheese",
+        "dairy free cheese",
         "mushrooms"
       ],
       "categories": ["pizza"],
@@ -242,13 +213,6 @@
       "chef_capabilities": ["Shif"]
     },
     {
-      "name": "garlic yogurt pasta",
-      "ingredients": ["lactose free yogurt", "garlic", "pasta"],
-      "categories": ["pasta"],
-      "prep": ["garlic"],
-      "chef_capabilities": ["Shif", "Zack"]
-    },
-    {
       "name": "pesto pasta",
       "ingredients": ["vegan pesto", "garlic", "pasta"],
       "categories": ["pasta"],
@@ -259,7 +223,7 @@
       "name": "sheet pan gnocchi",
       "ingredients": [
         "vegan pesto",
-        "lactose free yogurt",
+        "dairy free yogurt",
         "lemon",
         "gnocchi",
         "onion",
@@ -279,7 +243,7 @@
         "onion",
         "garlic",
         "fresh dill",
-        "lactose free yogurt"
+        "dairy free yogurt"
       ],
       "categories": ["eggs", "rice"],
       "prep": ["rice"],
@@ -290,8 +254,8 @@
       "ingredients": [
         "tortillas",
         "beyond beef",
-        "lactose free cheese",
-        "lactose free sour cream",
+        "dairy free cheese",
+        "dairy free sour cream",
         "onion",
         "salsa"
       ],
@@ -307,14 +271,12 @@
       "chef_capabilities": ["Shif", "Zack"]
     },
     {
-      "name": "rose teokbokki",
+      "name": "teokbokki",
       "ingredients": [
         "teokbokki",
         "garlic",
         "gochujang",
         "gochugaru",
-        "milk",
-        "lactose free cheese",
         "green onions"
       ],
       "categories": ["teokbokki"],

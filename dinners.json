@@ -15,6 +15,13 @@
       "chef_capabilities": ["Shif", "Zack"]
     },
     {
+      "name": "fish tacos",
+      "ingredients": ["fake fish fillets", "fresh dill", "dairy free yogurt", "lemon", "rice"],
+      "categories": ["fish"],
+      "prep": ["dill sauce"],
+      "chef_capabilities": ["Shif", "Zack"]
+    },
+    {
       "name": "maple garlic chicken pasta",
       "ingredients": [
         "pasta",

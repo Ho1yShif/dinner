@@ -113,22 +113,6 @@
       "chef_capabilities": ["Shif"]
     },
     {
-      "name": "tomato gnocchi soup with sourdough",
-      "ingredients": [
-        "tomato puree",
-        "tomato paste",
-        "onion",
-        "garlic",
-        "frozen mixed vegetables",
-        "gnocchi",
-        "lemon",
-        "sourdough bread"
-      ],
-      "categories": ["soup", "gnocchi"],
-      "prep": ["soup base"],
-      "chef_capabilities": ["Shif"]
-    },
-    {
       "name": "chicken with smashed potatoes",
       "ingredients": [
         "fake chicken tenders",

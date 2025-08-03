@@ -22,21 +22,6 @@
       "chef_capabilities": ["Shif", "Zack"]
     },
     {
-      "name": "maple garlic chicken pasta",
-      "ingredients": [
-        "pasta",
-        "maple syrup",
-        "cornstarch",
-        "garlic",
-        "ginger",
-        "apple cider vinegar",
-        "fake chicken tenders"
-      ],
-      "categories": ["pasta", "chicken"],
-      "prep": ["maple garlic sauce"],
-      "chef_capabilities": ["Shif"]
-    },
-    {
       "name": "tofu pasta",
       "ingredients": [
         "pasta",
